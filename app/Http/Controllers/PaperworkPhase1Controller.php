@@ -90,5 +90,6 @@ class PaperworkPhase1Controller extends Controller
     {
         //
         $user = User::findOrFail($id);
+        $user_id = $user->user_id;
     }
 }
