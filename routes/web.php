@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaperworkPhase1Controller;
 use App\Http\Controllers\PaperworkPhase2Controller;
@@ -17,7 +18,13 @@ use App\Http\Controllers\PaperworkPhase2Controller;
 */
 
 Route::redirect('/', '/login');
-Route::get('/login', function () { return 'Login supposed to be here'; });
+
+// Basic authentication
+Route::get('/login', [ AuthenticatedSessionController::class, 'create' ]);
+Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ]);
+Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ]);
+
+// Route::get('/register');
 
 Route::prefix('/kertas-kerja/fasa-1')->name('paperwork.phase-1.')->group(function () {
     Route::get('/',                   [ PaperworkPhase1Controller::class, 'index' ]);
