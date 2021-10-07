@@ -18,6 +18,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function create()
     {
+        return view('paperworkphase1.create');
         //
         // return view('user.add', [
         //     'name'=> $this->name;

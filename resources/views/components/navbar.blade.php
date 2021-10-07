@@ -1,9 +1,10 @@
 {{-- <nav class="navbar mb-2 shadow-lg bg-neutral text-neutral-content"> --}}
 <nav class="navbar mb-2 mb-16">
     <div class="px-2 mx-2 navbar-start">
-        <span class="font-light tracking-widest" style="letter-spacing: 0.36em;">
+        <a href="/kertas-kerja/fasa-1" class="text-primary font-light tracking-widest">
             E-PAPERWORK
-        </span>
+        <a>
+        <span class="font-light tracking-widest">&nbsp;/ PERMOHONAN</span>
     </div>
     <div class="hidden px-2 mx-2 navbar-center lg:flex">
         <div class="flex items-stretch">
