@@ -17,7 +17,7 @@ use App\Http\Controllers\PaperworkPhase2Controller;
 |
 */
 
-Route::redirect('/', '/login');
+Route::redirect('/', '/kertas-kerja/fasa-1');
 
 // Basic authentication
 Route::get('/login', [ AuthenticatedSessionController::class, 'create' ]);

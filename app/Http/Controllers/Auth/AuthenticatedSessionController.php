@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class AuthenticatedSessionController extends Controller
 {
     public function create() {
+        if(auth()->user())
+            return redirect('/');
         return view('auth.login');
     }
 
@@ -21,7 +23,6 @@ class AuthenticatedSessionController extends Controller
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return 'what';
             return redirect()->intended('kertas-kerja/fasa-1');
         }
 

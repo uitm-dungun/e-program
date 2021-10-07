@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="max-w-screen-md mx-auto">
     <div class="overflow-x-auto">
         <table class="table w-full">
             <thead>
@@ -10,13 +10,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
+                <tr class="hover">
                     <th>5</th>
                     <td>Yancy Tear</td>
                     <td>Community Outreach Specialist</td>
                     <td>Indigo</td>
                 </tr>
-                <tr class="">
+                <tr class="hover">
                     <th>6</th>
                     <td>Irma Vasilik</td>
                     <td>Editor</td>
@@ -28,7 +28,7 @@
                     <td>Staff Accountant IV</td>
                     <td>Yellow</td>
                 </tr>
-                <tr class="">
+                <tr class="hover">
                     <th>8</th>
                     <td>Sammy Seston</td>
                     <td>Accountant I</td>
