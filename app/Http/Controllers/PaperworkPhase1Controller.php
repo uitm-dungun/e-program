@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class PaperworkPhase1Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {

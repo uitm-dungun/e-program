@@ -31,4 +31,14 @@ class AuthenticatedSessionController extends Controller
             'email' => 'Butiran anda tidak ada dalam rekod kami, sila cuba isi semula.'
         ]);
     }
+
+    public function destroy(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

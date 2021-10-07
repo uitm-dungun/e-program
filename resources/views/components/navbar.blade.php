@@ -27,12 +27,33 @@
                 </path>
             </svg>
         </button>
-        <div class="flex-none">
-            <div class="avatar">
-                <div class="rounded-full w-10 h-10 m-1">
-                    <img src="https://i.pravatar.cc/500?img=32">
+        <div class="dropdown dropdown-end">
+            {{-- <div tabindex="0" class="m-1 btn"> --}}
+            <div tabindex="0">
+                <div class="flex-none">
+                    <div class="avatar">
+                        <div class="rounded-full w-10 h-10 m-1">
+                            <img src="https://i.pravatar.cc/500?img=32">
+                        </div>
+                    </div>
                 </div>
             </div>
+            <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                <li>
+                    <a>Item 1</a>
+                </li>
+                <li>
+                    <a>Item 2</a>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <form action="/logout" method="POST" class="px-5 py-3">
+                        @csrf
+                        <button>Logout</button>
+                    </form>
+                </li>
+            </ul>
         </div>
+
     </div>
 </nav>

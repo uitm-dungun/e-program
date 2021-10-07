@@ -20,9 +20,9 @@ use App\Http\Controllers\PaperworkPhase2Controller;
 Route::redirect('/', '/kertas-kerja/fasa-1');
 
 // Basic authentication
-Route::get('/login', [ AuthenticatedSessionController::class, 'create' ]);
-Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ]);
-Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ]);
+Route::get('/login', [ AuthenticatedSessionController::class, 'create' ])->name('login');
+Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ])->name('authenticate');
+Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
 
 // Route::get('/register');
 
