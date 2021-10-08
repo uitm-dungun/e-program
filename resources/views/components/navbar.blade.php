@@ -18,52 +18,23 @@
         <div class="dropdown dropdown-end">
             {{-- <div tabindex="0" class="m-1 btn"> --}}
             <div tabindex="0">
-                <div class="flex-none">
-                    <div class="avatar">
-                        <div class="rounded-full w-10 h-10 m-1">
-                            <img src="https://i.pravatar.cc/500?img=32">
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>PTJ</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
 
 
             <ul tabindex="0" class="w-52 menu py-3 shadow-lg bg-base-100 rounded-box dropdown-content">
                 <li class="menu-title">
                     <span>
-                        Menu Title
+                        Menu pilihan
                     </span>
-                </li>
-                <li>
-                    <a>
-                        Item without icon
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            class="inline-block w-5 h-5 mr-2 stroke-current">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                            </path>
-                        </svg>
-                        Item with icon
-    
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            class="inline-block w-5 h-5 mr-2 stroke-current">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                        </svg>
-                        Item with icon
-    
-                        <div class="badge ml-2 success">3</div>
-                    </a>
                 </li>
                 <li>
                     {{-- <input type="submit" value="submit"> --}}

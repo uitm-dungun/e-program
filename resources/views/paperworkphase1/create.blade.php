@@ -10,7 +10,10 @@
             </div>
             <div class="flex gap-x-4">
 
-                <div class="form-control">
+                <x-datepicker></x-datepicker>
+                <x-datepicker></x-datepicker>
+
+                {{-- <div class="form-control">
                     <label class="label">
                         <span class="label-text">Tarikh Mula</span>
                     </label>
@@ -21,7 +24,7 @@
                         <span class="label-text">Tarikh Akhir</span>
                     </label>
                     <input type="text" placeholder="username" class="input input-bordered">
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
