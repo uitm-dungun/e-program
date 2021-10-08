@@ -124,7 +124,7 @@
   ),
   'breadcrumbs' => 
   array (
-    'view' => 'breadcrumbs::bootstrap5',
+    'view' => 'components.breadcrumbs',
     'files' => 'C:\\dev\\projects@officials\\e-program\\routes/breadcrumbs.php',
     'unnamed-route-exception' => true,
     'missing-route-bound-breadcrumb-exception' => true,
