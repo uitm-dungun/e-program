@@ -27,8 +27,8 @@ Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->na
 // Route::get('/register');
 
 Route::prefix('/kertas-kerja/fasa-1')->name('paperwork.phase-1.')->group(function () {
-    Route::get('/',                   [ PaperworkPhase1Controller::class, 'index' ]);
-    Route::get('/permohonan',         [ PaperworkPhase1Controller::class, 'create' ]);
+    Route::get('/',                   [ PaperworkPhase1Controller::class, 'index' ])->name('index');
+    Route::get('/permohonan',         [ PaperworkPhase1Controller::class, 'create' ])->name('create');
     Route::post('/',                  [ PaperworkPhase1Controller::class, 'store' ]);
     Route::get('/semakan/{id}',       [ PaperworkPhase1Controller::class, 'show' ]);
     Route::get('/semakan/{id}/cetak', [ PaperworkPhase1Controller::class, 'print' ]);

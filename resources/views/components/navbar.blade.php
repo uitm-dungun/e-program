@@ -1,11 +1,12 @@
 {{-- <nav class="navbar mb-2 shadow-lg bg-neutral text-neutral-content"> --}}
 <nav class="navbar mb-2 mb-16">
-    <div class="px-2 mx-2 navbar-start">
+    {{ Breadcrumbs::render('paperwork.phase-1.create') }}
+    {{-- <div class="px-2 mx-2 navbar-start">
         <a href="/kertas-kerja/fasa-1" class="text-primary font-light tracking-widest">
             E-PAPERWORK
         <a>
         <span class="font-light tracking-widest">&nbsp;/ PERMOHONAN</span>
-    </div>
+    </div> --}}
     <div class="hidden px-2 mx-2 navbar-center lg:flex">
         <div class="flex items-stretch">
             <a class="btn btn-ghost btn-sm rounded-btn normal-case">

@@ -122,6 +122,16 @@
     ),
     'password_timeout' => 10800,
   ),
+  'breadcrumbs' => 
+  array (
+    'view' => 'breadcrumbs::bootstrap5',
+    'files' => 'C:\\dev\\projects@officials\\e-program\\routes/breadcrumbs.php',
+    'unnamed-route-exception' => true,
+    'missing-route-bound-breadcrumb-exception' => true,
+    'invalid-named-breadcrumb-exception' => true,
+    'manager-class' => 'Diglactic\\Breadcrumbs\\Manager',
+    'generator-class' => 'Diglactic\\Breadcrumbs\\Generator',
+  ),
   'broadcasting' => 
   array (
     'default' => 'log',
