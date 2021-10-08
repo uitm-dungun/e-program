@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaperworkPhase1Controller;
 use App\Http\Controllers\PaperworkPhase2Controller;
@@ -16,12 +17,18 @@ use App\Http\Controllers\PaperworkPhase2Controller;
 |
 */
 
-Route::redirect('/', '/login');
-Route::get('/login', function () { return 'Login supposed to be here'; });
+Route::redirect('/', '/kertas-kerja/fasa-1');
+
+// Basic authentication
+Route::get('/login', [ AuthenticatedSessionController::class, 'create' ])->name('login');
+Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ])->name('authenticate');
+Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
+
+// Route::get('/register');
 
 Route::prefix('/kertas-kerja/fasa-1')->name('paperwork.phase-1.')->group(function () {
-    Route::get('/',                   [ PaperworkPhase1Controller::class, 'index' ]);
-    Route::get('/permohonan',         [ PaperworkPhase1Controller::class, 'create' ]);
+    Route::get('/',                   [ PaperworkPhase1Controller::class, 'index' ])->name('index');
+    Route::get('/permohonan',         [ PaperworkPhase1Controller::class, 'create' ])->name('create');
     Route::post('/',                  [ PaperworkPhase1Controller::class, 'store' ]);
     Route::get('/semakan/{id}',       [ PaperworkPhase1Controller::class, 'show' ]);
     Route::get('/semakan/{id}/cetak', [ PaperworkPhase1Controller::class, 'print' ]);
