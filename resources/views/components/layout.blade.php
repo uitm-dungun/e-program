@@ -18,6 +18,7 @@
     <main {{ $attributes }}>
         {{ $slot }}
     </main>
+    @stack('scripts')
 </body>
 
 </html>

@@ -9248,3 +9248,20 @@ avbar.blade.php) at C:\\dev\\projects@officials\\e-program\esources\\views/comp
 #62 C:\\dev\\projects@officials\\e-program\\server.php(21): require_once('...')
 #63 {main}
 "} 
+[2021-10-09 02:49:43] local.ERROR: Command "optiimze" is not defined.
+
+Did you mean one of these?
+    optimize
+    optimize:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optiimze\" is not defined.
+
+Did you mean one of these?
+    optimize
+    optimize:clear at C:\\dev\\projects@officials\\e-program\\vendor\\symfony\\console\\Application.php:682)
+[stacktrace]
+#0 C:\\dev\\projects@officials\\e-program\\vendor\\symfony\\console\\Application.php(255): Symfony\\Component\\Console\\Application->find()
+#1 C:\\dev\\projects@officials\\e-program\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 C:\\dev\\projects@officials\\e-program\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run()
+#3 C:\\dev\\projects@officials\\e-program\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 C:\\dev\\projects@officials\\e-program\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
