@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Paperwork;
+
 class PaperworkPhase1Controller extends Controller
 {
     public function __construct()
@@ -13,6 +15,9 @@ class PaperworkPhase1Controller extends Controller
 
     public function index()
     {
+        foreach (Paperwork::all() as $paperwork) {
+            echo $paperwork->//name;
+        }
         return view('paperworkphase1.index');
     }
 
