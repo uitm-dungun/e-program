@@ -1,67 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-	* {
-	  box-sizing: border-box;
-	}
+//penerimaan n semakan kk amek dr blade 
+nanti x tahu yg tu camne sambung
 
-	body {
-	  font-family: Arial, Helvetica, sans-serif;
-	}
-	form > label
-	{
-	  float: left;
-	  clear: right;
-	}
+{{-- <x-layout class="max-w-screen-lg mx-auto"> --}}
+<x-layout class="mx-12 flex gap-12 min-h-full" style="min-height: 70vh;">
 
-	form > input
-	{
-	  float: right;
-	}
-	@media (max-width: 600px) {
-	  nav, article {
-		width: 100%;
-		height: auto;
-	  }
-	}
-	</style>
-</head>
-<body>
-    <form action="/action_page.php">
-	<div>
-	<p>Kelulusan Kertas Kerja</p>
-	</div>
-
-	<label for="idmeeting"></label>
-    <input type="text" id="idmeeting" name="idmeeting" value="#"><br></br>
-	<label for="title">Tajuk:</label>
-    <input type="text" id="title" name="title"><br></br>
-	<label for="date">Tarikh:</label>
-    <input type="date" id="datefrom" name="datefrom">- 
-    <input type="date" id="dateuntil" name="dateuntil"><br></br>
-
-	<label for="meetingdate">Tarikh Meeting:</label>
-	<p align="right">Pilih Tarikh meeting</p>
-	<input type="date" id="meetingdate" name="meetingdate"><br>
-	</form>
-	<br>
-	<div align=left>
-	<input type="file" id="myFile" name="file"><h5>Muat Turun Dokumen</h5>
-	</div>
-	<div align=right>
-    <input type="button" value="Lulus" align="right">    
-    <input type="button" value="Batal" align="right"> 
-	
-	//<a href="#" class ="btn btn-primary">Click me</a>  
-	</div>
-
-</body>
-</html>
-
-//cth
 <!DOCTYPE html>
 <html lang="en">
 	<meta charset="utf-8">
@@ -164,3 +106,5 @@
 
 </body>
 </html>
+
+</x-layout>

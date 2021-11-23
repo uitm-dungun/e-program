@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EpaperworkPaperwork;
 use Illuminate\Http\Request;
-
-use App\Models\Paperwork;
 
 class PaperworkPhase1Controller extends Controller
 {
@@ -15,10 +14,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function index()
     {
-        foreach (Paperwork::all() as $paperwork) {
-            echo $paperwork->//name;
-        }
-        return view('paperworkphase1.index');
+        // return view('paperworkphase1.index', ['paperworks' => Paperwork::all()]);
     }
 
     public function create()
@@ -40,7 +36,35 @@ class PaperworkPhase1Controller extends Controller
 
     public function store(Request $request)
     {
-        //
+        $paperwork = new EpaperworkPaperwork();
+
+        // Step 1
+        $paperwork->title = $request->input('title');
+        $paperwork->venue = $request->input('venue');
+        $paperwork->total_participants = $request->input('total_participants');
+        $paperwork->target_participants = $request->input('target_participants');
+        $paperwork->objective = $request->input('objective');
+
+        // Step 2
+        $paperwork->budget_moneybank = $request->input('budget_moneybank');
+        $paperwork->budget_grant = $request->input('budget_grant');
+        $paperwork->budget_notes = $request->input('budget_notes');
+
+        // KIV parse table inputs
+        $paperwork->officers = json_encode([]);
+        $paperwork->budgets = json_encode([]);
+
+        return $paperwork->save();
+
+        // Parse indexed table inputs into jsons
+        // $officer_json = '';
+        // foreach (['name', 'program_id', 'position', 'ic', 'phone', 'category'] as $v) {
+        //     for($i = 0; $request->input("officer-{$i}-{$v}") != null; ++$i) {
+                
+        //     }
+        // }
+
+        return redirect('/');
         // $status = Status::make($request ->all(),[
         //     'title' => 'required',
         //     'name' => 'required',

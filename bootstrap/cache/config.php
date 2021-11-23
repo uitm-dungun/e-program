@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:7WMaBlXSij+PI+XwG5sZe3m3ipA60gT0AGomZqnvaI0=',
+    'key' => 'base64:Q6vCqpm80H6oudy84P3vcD13pqEEfwfmfW7vfI/93/o=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -125,7 +125,7 @@
   'breadcrumbs' => 
   array (
     'view' => 'components.breadcrumbs',
-    'files' => 'C:\\dev\\projects@officials\\e-program\\routes/breadcrumbs.php',
+    'files' => 'C:\\laragon\\www\\e-program\\routes/breadcrumbs.php',
     'unnamed-route-exception' => true,
     'missing-route-bound-breadcrumb-exception' => true,
     'invalid-named-breadcrumb-exception' => true,
@@ -193,7 +193,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\dev\\projects@officials\\e-program\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\e-program\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -364,12 +364,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\dev\\projects@officials\\e-program\\storage\\app',
+        'root' => 'C:\\laragon\\www\\e-program\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\dev\\projects@officials\\e-program\\storage\\app/public',
+        'root' => 'C:\\laragon\\www\\e-program\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -387,7 +387,7 @@
     ),
     'links' => 
     array (
-      'C:\\dev\\projects@officials\\e-program\\public\\storage' => 'C:\\dev\\projects@officials\\e-program\\storage\\app/public',
+      'C:\\laragon\\www\\e-program\\public\\storage' => 'C:\\laragon\\www\\e-program\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -421,13 +421,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\dev\\projects@officials\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\dev\\projects@officials\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -478,7 +478,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\dev\\projects@officials\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -544,7 +544,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\dev\\projects@officials\\e-program\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\e-program\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -645,7 +645,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\dev\\projects@officials\\e-program\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\e-program\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -665,9 +665,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\dev\\projects@officials\\e-program\\resources\\views',
+      0 => 'C:\\laragon\\www\\e-program\\resources\\views',
     ),
-    'compiled' => 'C:\\dev\\projects@officials\\e-program\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\e-program\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -712,9 +712,10 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Http\\Livewire',
-    'view_path' => 'C:\\dev\\projects@officials\\e-program\\resources\\views/livewire',
+    'view_path' => 'C:\\laragon\\www\\e-program\\resources\\views/livewire',
     'layout' => 'layouts.app',
     'asset_url' => NULL,
+    'app_url' => NULL,
     'middleware_group' => 'web',
     'temporary_file_upload' => 
     array (
@@ -745,6 +746,7 @@
     ),
     'manifest_path' => NULL,
     'back_button_cache' => false,
+    'render_on_redirect' => false,
   ),
   'tinker' => 
   array (

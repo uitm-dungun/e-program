@@ -1,13 +1,23 @@
 {{-- <x-layout class="max-w-screen-lg mx-auto"> --}}
 <x-layout class="mx-12 flex gap-12 min-h-full" style="min-height: 70vh;">
 
-    <div class="flex-grow">
+    <div class="flex flex-col space-y-3">
+        <div class="flex-grow ">
         <a href="/kertas-kerja/fasa-1/permohonan" class="btn-block btn btn-lg btn-primary"><span
                 class="mr-3">Mohon</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-            </svg></a>
+            </svg>
+        </a>
+        </div>
+        <div class="flex-grow space-y-4 justify-center">
+        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Tunggu Respon
+        </button>
+        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Lulus 
+        </button>
+        </div>
+    
     </div>
 
     <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
@@ -63,13 +73,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($paperworks as $paperwork)
                         <tr class="hover">
-                            <td><a href="{{ route('paperwork.phase-1.show', 1 /* Pass id here */) }}">Program Name Lorem ipsum dolor sit amet...</a></td>
+                            <td><a href="{{ route('paperwork.phase-1.show', $paperwork->id) }}">{{ $paperwork->title }}</a></td>
                             <td>
-                                <div class="badge badge-success">lulus</div>
+                                <div class="badge badge-success">{{ $paperwork->status }}</div>
                             </td>
-                            <td>17 April 2021</td>
-                            <td>18 April 2021</td>
+                            <td>{{ $paperwork->created_at->toFormattedDateString() }}</td>
+                            <td>{{ $paperwork->updated_at->toFormattedDateString() }}</td>
                             <td><a href="{{ route('paperwork.phase-1.show', 1 /* Pass id here */) }}" class="btn btn-xs btn-primary btn-square"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                         fill="currentColor">
                                         <path fill-rule="evenodd"
@@ -77,6 +88,7 @@
                                             clip-rule="evenodd" />
                                     </svg></a></td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

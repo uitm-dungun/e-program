@@ -20,7 +20,7 @@
         <div class="flex-col justify-center hero-content lg:flex-row gap-20">
             <div class="text-center lg:text-left">
                 <h1 class="mb-5 text-5xl font-bold whitespace-nowrap">
-                    E-Program
+                    ePaperwork
                 </h1>
                 <p class="mb-5">
                     Sila login untuk tuju ke destinasi yang seterusnya.

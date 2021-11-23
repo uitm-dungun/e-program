@@ -3,11 +3,11 @@
         <div class="mb-5">
             {{-- <label for="datepicker" class="font-bold mb-1 text-gray-700 block">Select Date</label> --}}
             <label for="datepicker" class="label">
-                <span class="label-text">Tarikh Mula</span>
+                <span class="label-text">{{ $slot }}</span>
             </label>
-
+            
             <div class="relative">
-                <input type="hidden" name="date" x-ref="date" :value="datepickerValue" />
+                <input name="{{ $form_name }}" type="hidden" name="date" x-ref="date" :value="datepickerValue" />
                 <input type="text" x-on:click="initDate(datepickerValue), showDatepicker = !showDatepicker" x-model="datepickerValue"
                     x-on:keydown.escape="showDatepicker = false"
                     {{-- class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium" --}}
