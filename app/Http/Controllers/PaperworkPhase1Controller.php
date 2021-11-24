@@ -82,9 +82,9 @@ class PaperworkPhase1Controller extends Controller
 
     }
 
-    public function showKerani($id)
+    public function showKerani()
     {
-        return view('paperworkphase1.index');
+        return view('paperworkphase1.kerani.show');
     }
 
     public function show($id)
