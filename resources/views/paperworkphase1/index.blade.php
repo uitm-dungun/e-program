@@ -14,10 +14,10 @@
         <div class="flex-grow space-y-4 justify-center">
         <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Tunggu Respon
         </button>
-        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Lulus 
+        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Lulus
         </button>
         </div>
-    
+
     </div>
 
     <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
@@ -75,13 +75,13 @@
                     <tbody>
                         @foreach($paperworks as $paperwork)
                         <tr class="hover">
-                            <td><a href="{{ route('paperwork.phase-1.show', $paperwork->id) }}">{{ $paperwork->title }}</a></td>
+                            <td><a href="{{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}">{{ $paperwork->title }}</a></td>
                             <td>
                                 <div class="badge badge-success">{{ $paperwork->status }}</div>
                             </td>
                             <td>{{ $paperwork->created_at->toFormattedDateString() }}</td>
                             <td>{{ $paperwork->updated_at->toFormattedDateString() }}</td>
-                            <td><a href="{{ route('paperwork.phase-1.show', 1 /* Pass id here */) }}" class="btn btn-xs btn-primary btn-square"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                            <td><a href="{{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}" class="btn btn-xs btn-primary btn-square"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                         fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"

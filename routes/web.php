@@ -30,10 +30,9 @@ Route::prefix('/kertas-kerja/fasa-1')->name('paperwork.phase-1.')->group(functio
     Route::get('/',                           [ PaperworkPhase1Controller::class, 'index' ])->name('index');
     Route::get('/show',                       [ PaperworkPhase1Controller::class, 'show' ])->name('show');
     Route::get('/permohonan',                 [ PaperworkPhase1Controller::class, 'create' ])->name('create');
-    Route::get('/permohonan',                 [ PaperworkPhase1Controller::class, 'budget' ])->name('budget');
     Route::post('/',                          [ PaperworkPhase1Controller::class, 'store' ])->name('store');
 
-    Route::get('/semakan/kerani/{id}',        [ PaperworkPhase1Controller::class, 'showKerani' ])->name('kerani');
+    Route::get('/semakan/kerani/{id}',        [ PaperworkPhase1Controller::class, 'showKerani' ])->name('kerani.show');
     Route::get('/semakan/{id}/pegawai',       [ PaperworkPhase1Controller::class, 'showPegawai' ])->name('pegawai.show');
 
     Route::put('/semakan/{id}/pegawai',       [ PaperworkPhase1Controller::class, 'reject' ])->name('pegawai.reject');

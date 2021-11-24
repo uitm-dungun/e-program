@@ -1,6 +1,6 @@
 {{-- <nav class="navbar mb-2 shadow-lg bg-neutral text-neutral-content"> --}}
 <nav class="navbar mb-2 mb-16">
-    {{-- Breadcrumbs::render(Route::currentRouteName()) --}}
+    {{ Breadcrumbs::render(Route::currentRouteName()) }}
     <div class="hidden px-2 mx-2 navbar-center lg:flex">
         <div class="flex items-stretch">
             <a class="btn btn-ghost btn-sm rounded-btn normal-case">
@@ -49,7 +49,7 @@
                     </form>
                 </li>
             </ul>
-{{-- 
+{{--
             <ul class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
                 <li>
                     <a>Item 1</a>

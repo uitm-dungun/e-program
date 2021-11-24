@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EpaperworkPaperwork;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PaperworkPhase1Controller extends Controller
@@ -54,13 +55,13 @@ class PaperworkPhase1Controller extends Controller
         $paperwork->officers = json_encode($request->input('officers'));
         $paperwork->budgets = json_encode([]);
 
-        return $paperwork->save();
+        $paperwork->save();
 
         // Parse indexed table inputs into jsons
         // $officer_json = '';
         // foreach (['name', 'program_id', 'position', 'ic', 'phone', 'category'] as $v) {
         //     for($i = 0; $request->input("officer-{$i}-{$v}") != null; ++$i) {
-                
+
         //     }
         // }
 
@@ -70,7 +71,7 @@ class PaperworkPhase1Controller extends Controller
         //     'name' => 'required',
         //     'level_id' => 'required',
         // ]);
-        
+
         // if($status->fails()){
         //     return redirect()
         //     ->back()
@@ -84,8 +85,14 @@ class PaperworkPhase1Controller extends Controller
 
     public function showKerani($id)
     {
-        return view('paperworkphase1.index');
+        return view('paperworkphase1.kerani.show', ['epaperwork_paperwork' => EpaperworkPaperwork::find($id)]);
     }
+
+    // public function showKerani(EpaperworkPaperwork $epaperwork_paperwork) : View
+    // {
+    //     return 'aasdasd';
+    //     return view('paperworkphase1.kerani.show', ['epaperworkpaperwork' => $epaperwork_paperwork]);
+    // }
 
     public function show($id)
     {
@@ -115,8 +122,8 @@ class PaperworkPhase1Controller extends Controller
     //     $user -> date_until =$request -> date_until;
     //     $user -> budgets = $request -> budgets;
     //     $user -> status = $request -> status ?? null;
-    //     $user -> details = $request -> details;    
-        
+    //     $user -> details = $request -> details;
+
     //     $user ->save();
 
     //     return redirect()
