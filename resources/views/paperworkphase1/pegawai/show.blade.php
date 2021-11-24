@@ -15,8 +15,10 @@
             </div>
             <div class="flex gap-x-4">
 
+                {{--
                 <x-datepicker></x-datepicker>
                 <x-datepicker></x-datepicker>
+                --}}
 
                 
                 {{-- <div class="form-control">
@@ -33,7 +35,7 @@
                 </div> --}}
                 </div>
                 <div class="flex gap-x-4">
-                <x-datepicker></x-datepicker>
+                {{-- <x-datepicker></x-datepicker> --}}
                 <p class="text-left">Pilih Tarikh Meeting</p>
                 {{-- <div class="form-control">
                     <label class="label">

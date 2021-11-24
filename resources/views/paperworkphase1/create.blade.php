@@ -93,7 +93,7 @@
                             <span class="label-text">Objektif</span>
                         </label>
                         <!-- textarea class="textarea h-24 textarea-bordered" placeholder="objektif program"></textarea -->
-                        <textarea name="objective" class="max" id="coverLetterText" cols="80" rows="12" background placeholder="Make a Pitch not more than 500 words"></textarea>
+                        <textarea class="textarea h-24 textarea-bordered" name="objective" class="max" id="coverLetterText" cols="80" rows="12" background placeholder="Make a Pitch not more than 500 words"></textarea>
                     </div>
                 </div>
                 <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
@@ -114,39 +114,20 @@
                                     </tr>
                                 </thead>
                                 <tbody id="input-officers">
-                                    <tr class="hover input-officer" id="input-officer-2">
-                                        <th>2</th>
-                                        <td><input type="text" name="officer-2-name" placeholder="Isi Nama"></td>
-                                        <td><input type="text" name="officer-2-programid" placeholder="Isi ID Program"></td>
-                                        <td><input type="text" name="officer-2-position" placeholder="Isi Jawatan"></td>
-                                        <td><input type="text" name="officer-2-ic" placeholder="Isi Kad Pengenalan"></td>
-                                        <td><input type="text" name="officer-2-phone" placeholder="Isi No.Telefon"></td>
-                                        <td><select class="select select-bordered select-success w-full max-w-xs" name="officer-2-category">
-                                            <option disabled="disabled" selected="selected">Pilih Kategori</option>
-                                            <option value="panel">Panel</option>
-                                            <option value="facilitator">Fasilitator</option>
-                                            </select>
-                                        </td>
-                                        <td><button type="button" onclick="inputPanelsRemove(1)">
-                                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                            </svg>
-                                        </button></td>
-                                    </tr>
-                                    <tr class="hover input-officer" id="input-officer-1">
+                                    <tr class="hover input-officer" id="input-officer-0">
                                         <th>1</th>
-                                        <td><input type="text" name="officer-1-nama" placeholder="Isi Nama"></td>
-                                        <td><input type="text" name="officer-1-programid" placeholder="Isi ID Program"></td>
-                                        <td><input type="text" name="officer-1-position" placeholder="Isi Jawatan"></td>
-                                        <td><input type="text" name="officer-1-ic" placeholder="Isi Kad Pengenalan"></td>
-                                        <td><input type="text" name="officer-1-phone" placeholder="Isi No.Telefon"></td>
-                                        <td><select class="select select-bordered select-success w-full max-w-xs" name="officer-1-category">
+                                        <td><input type="text" name="officers[0][name]" placeholder="Isi Nama"></td>
+                                        <td><input type="text" name="officers[0][programid]" placeholder="Isi ID Program"></td>
+                                        <td><input type="text" name="officers[0][position]" placeholder="Isi Jawatan"></td>
+                                        <td><input type="text" name="officers[0][ic]" placeholder="Isi Kad Pengenalan"></td>
+                                        <td><input type="text" name="officers[0][phone]" placeholder="Isi No.Telefon"></td>
+                                        <td><select class="select select-bordered select-success w-full max-w-xs" name="officers[0][category]">
                                             <option disabled="disabled" selected="selected">Pilih Kategori</option>
                                             <option value="panel">Panel</option>
                                             <option value="facilitator">Fasilitator</option>
                                             </select>
                                         </td>
-                                        <td><button type="button" onclick="inputPanelsRemove(1)">
+                                        <td><button type="button" onclick="inputRowRemove('officer', 0)">
                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
                                             </svg>
@@ -257,29 +238,51 @@
 
             // Maklumat petugas <==> Officer
             $('#add-new-officer').click(() => {
-                // Reindex all elements
-                $('.input-officer').each((i, el) => {
-                    $(el).attr("id",`input-officer-${i+1}`)
-                    $(el).eq(0).text(i)
-                    $(el).eq(0).children().eq(2).children().first().attr('name')
-                    $(el).eq(0).children().eq(3).children().first().attr('name', `officer-${i+1}-nama`)
-                    $(el).eq(0).children().eq(4).children().first().attr('name', `officer-${i+1}-programid`)
-                    $(el).eq(0).children().eq(5).children().first().attr('name', `officer-${i+1}-position`)
-                    $(el).eq(0).children().eq(6).children().first().attr('name', `officer-${i+1}-ic`)
-                    $(el).eq(0).children().eq(7).children().first().attr('name', `officer-${i+1}-phone`)
-                    $(el).eq(0).children().eq(8).children().first().attr('name', `officer-${i+1}-category`)
-                    $(el).eq(0).children().eq(9).children().first().attr('onclick', `inputRowRemove(officer, ${i+1})`)
-                })
+                reindexRows('officer');
                 // Append
-                // let n = $('.input-officer').length + 1;
-                // $('#input-officers').append(`
-                        
-                // `);
+                let i = $('.input-officer').length; // No need to add 1 because of index starts at 0, length +1 index
+                $('#input-officers').append(`
+                    <tr class="hover input-officer" id="input-officer-${i}">
+                        <th>${i+1}</th>
+                        <td><input type="text" name="officers[${i}][name]" placeholder="Isi Nama"></td>
+                        <td><input type="text" name="officers[${i}][programid]" placeholder="Isi ID Program"></td>
+                        <td><input type="text" name="officers[${i}][position]" placeholder="Isi Jawatan"></td>
+                        <td><input type="text" name="officers[${i}][ic]" placeholder="Isi Kad Pengenalan"></td>
+                        <td><input type="text" name="officers[${i}][phone]" placeholder="Isi No.Telefon"></td>
+                        <td><select class="select select-bordered select-success w-full max-w-xs" name="officers[${i}][category]">
+                            <option disabled="disabled" selected="selected">Pilih Kategori</option>
+                            <option value="panel">Panel</option>
+                            <option value="facilitator">Fasilitator</option>
+                            </select>
+                        </td>
+                        <td><button type="button" onclick="inputRowRemove('officer', ${i})">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button></td>
+                    </tr>                        
+                `);
             });
         }); //end if ready(fn)
+
         function inputRowRemove(name,index) {
-            console.log($(`#input-${name}-id-${index}`))
-                $(`#input-${name}-id-${index}`).remove();
+            $(`#input-${name}-${index}`).remove();
+            reindexRows(name);
+        }
+
+        function reindexRows(title) {
+            // Reindex all elements
+            $(`.input-${title}`).each((i, el) => {
+                $(el).attr("id",`input-${title}-${i}`)
+                $(el).eq(0).children().eq(0).text(i+1)
+                $(el).eq(0).children().eq(1).children().first().attr('name', `${title}s[${i}][nama]`)
+                $(el).eq(0).children().eq(2).children().first().attr('name', `${title}s[${i}][programid]`)
+                $(el).eq(0).children().eq(3).children().first().attr('name', `${title}s[${i}][position]`)
+                $(el).eq(0).children().eq(4).children().first().attr('name', `${title}s[${i}][ic]`)
+                $(el).eq(0).children().eq(5).children().first().attr('name', `${title}s[${i}][phone]`)
+                $(el).eq(0).children().eq(6).children().first().attr('name', `${title}s[${i}][category]`)
+                $(el).eq(0).children().eq(7).children().first().attr('onclick', `inputRowRemove('${title}', ${i})`)
+            })
         }
     </script>    
 

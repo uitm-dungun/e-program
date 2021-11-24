@@ -14,7 +14,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function index()
     {
-        // return view('paperworkphase1.index', ['paperworks' => Paperwork::all()]);
+        return view('paperworkphase1.index', ['paperworks' => EpaperworkPaperwork::all()]);
     }
 
     public function create()
@@ -51,7 +51,7 @@ class PaperworkPhase1Controller extends Controller
         $paperwork->budget_notes = $request->input('budget_notes');
 
         // KIV parse table inputs
-        $paperwork->officers = json_encode([]);
+        $paperwork->officers = json_encode($request->input('officers'));
         $paperwork->budgets = json_encode([]);
 
         return $paperwork->save();
@@ -80,6 +80,11 @@ class PaperworkPhase1Controller extends Controller
 
 
 
+    }
+
+    public function showKerani($id)
+    {
+        return view('paperworkphase1.index');
     }
 
     public function show($id)
