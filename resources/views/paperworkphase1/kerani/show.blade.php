@@ -5,14 +5,42 @@
                 <label class="label">
                     <span class="label-text">Penerimaan Kertas Kerja</span>
                 </label>
-                <input type="text" value="#4012" class="input input-bordered">
+                <input type="text" value="#{{ $epaperwork_paperwork->id }}" class="input input-bordered" readonly>
             </div>
             <div class="form-control">
                 <label class="label">
                     <span class="label-text">Tajuk</span>
                 </label>
-                <input type="text" placeholder="isi tajuk program" class="input input-bordered">
+                <input type="text" value="{{ $epaperwork_paperwork->title }}"  class="input input-bordered" readonly>
             </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Bajet</span>
+                </label>
+                <div class="overflow-x-auto">
+                    <table class="table w-full table-compact">
+                        <thead>
+                            <tr>
+                                <th>Butir</th>
+                                <th>Harga / Unit</th>
+                                <th>Kuantiti</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($epaperwork_paperwork->budgets as $budget)
+                                <tr>
+                                    <td>{{ $budget['detail'] }}</td>
+                                    <td>{{ $budget['price_per_unit'] }}</td>
+                                    <td>{{ $budget['quantity'] }}</td>
+                                    <td>{{ $budget['price_per_unit'] * $budget['quantity'] }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             {{-- <div class="flex gap-x-4"> --}}
 
                 {{-- <x-datepicker></x-datepicker>
@@ -46,7 +74,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>

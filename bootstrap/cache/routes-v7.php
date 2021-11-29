@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nBtPcUNTWv6bNFyk',
+            '_route' => 'generated::mpgvTDnrjZ8a7CLs',
           ),
           1 => NULL,
           2 => 
@@ -63,7 +63,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8d4lKmeLrdByQ9aD',
+            '_route' => 'generated::VEzdlTGNJBxdvc3W',
           ),
           1 => NULL,
           2 => 
@@ -83,7 +83,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LWVfLi7QvFLr1iQr',
+            '_route' => 'generated::kmjvLW1xIPKNS84X',
           ),
           1 => NULL,
           2 => 
@@ -103,7 +103,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fMlE1x1zGFY9sVkO',
+            '_route' => 'generated::Zaz19MMDpqmLvSnR',
           ),
           1 => NULL,
           2 => 
@@ -123,7 +123,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::W3bZ65B1mu0IAo1C',
+            '_route' => 'generated::xWQyIz7VImDlUr1f',
           ),
           1 => NULL,
           2 => 
@@ -299,7 +299,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/(?|message/([^/]++)(*:36)|preview\\-file/([^/]++)(*:65))|/kertas\\-kerja/fasa\\-(?|1/(?|semakan/(?|kerani/([^/]++)(*:128)|([^/]++)/(?|pegawai(?|(*:158))|cetak(*:172)))|([^/]++)(?|(*:193)))|2/kelulusan/([^/]++)(?|(*:226)|/(?|hantar\\-semula(*:252)|cetak(*:265)))))/?$}sDu',
+      0 => '{^(?|/livewire/(?|message/([^/]++)(*:36)|preview\\-file/([^/]++)(*:65))|/kertas\\-kerja/fasa\\-(?|1/(?|semakan/(?|kerani/([^/]++)(?|(*:131)|/print(*:145))|([^/]++)/(?|pegawai(?|(*:176))|cetak(*:190)))|([^/]++)(?|(*:211)))|2/kelulusan/([^/]++)(?|(*:244)|/(?|hantar\\-semula(*:270)|cetak(*:283)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -348,7 +348,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      128 => 
+      131 => 
       array (
         0 => 
         array (
@@ -371,7 +371,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      158 => 
+      145 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'paperwork.phase-1.kerani.print',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      176 => 
       array (
         0 => 
         array (
@@ -413,7 +436,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      172 => 
+      190 => 
       array (
         0 => 
         array (
@@ -436,13 +459,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      193 => 
+      211 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'paperwork.phase-1.generated::MJTCVnJnChpdSR1f',
+            '_route' => 'paperwork.phase-1.generated::kzS3WlA7Uc4QY1t1',
           ),
           1 => 
           array (
@@ -461,7 +484,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'paperwork.phase-1.generated::uWkJgxq2bW2qsbg0',
+            '_route' => 'paperwork.phase-1.generated::CNMigZNsQ2Rz4fpD',
           ),
           1 => 
           array (
@@ -477,13 +500,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      226 => 
+      244 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'paperwork.phase-2.generated::St4ze6hu3qjcdK3i',
+            '_route' => 'paperwork.phase-2.generated::ieLdWkmGROVsm1st',
           ),
           1 => 
           array (
@@ -500,13 +523,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      252 => 
+      270 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'paperwork.phase-2.generated::VI63cN7lAdthgwn1',
+            '_route' => 'paperwork.phase-2.generated::6iu8QPIDpmdgBCNR',
           ),
           1 => 
           array (
@@ -522,13 +545,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      265 => 
+      283 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'paperwork.phase-2.generated::ylLbl6Mz8EeWyvtQ',
+            '_route' => 'paperwork.phase-2.generated::LYyzyBvp9qyWtdKP',
           ),
           1 => 
           array (
@@ -560,7 +583,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::nBtPcUNTWv6bNFyk' => 
+    'generated::mpgvTDnrjZ8a7CLs' => 
     array (
       'methods' => 
       array (
@@ -581,7 +604,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::nBtPcUNTWv6bNFyk',
+        'as' => 'generated::mpgvTDnrjZ8a7CLs',
       ),
       'fallback' => false,
       'defaults' => 
@@ -691,7 +714,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8d4lKmeLrdByQ9aD' => 
+    'generated::VEzdlTGNJBxdvc3W' => 
     array (
       'methods' => 
       array (
@@ -703,7 +726,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
-        'as' => 'generated::8d4lKmeLrdByQ9aD',
+        'as' => 'generated::VEzdlTGNJBxdvc3W',
       ),
       'fallback' => false,
       'defaults' => 
@@ -719,7 +742,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LWVfLi7QvFLr1iQr' => 
+    'generated::kmjvLW1xIPKNS84X' => 
     array (
       'methods' => 
       array (
@@ -731,7 +754,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
-        'as' => 'generated::LWVfLi7QvFLr1iQr',
+        'as' => 'generated::kmjvLW1xIPKNS84X',
       ),
       'fallback' => false,
       'defaults' => 
@@ -747,7 +770,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fMlE1x1zGFY9sVkO' => 
+    'generated::Zaz19MMDpqmLvSnR' => 
     array (
       'methods' => 
       array (
@@ -764,13 +787,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000001ce0a60b000000004ea3d44c";}";s:4:"hash";s:44:"Xukc9Yv7WOX2nb7T40uXniYhxGk8RkaWrwueqN0XIrE=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000057d2cb76000000002cc2e53b";}";s:4:"hash";s:44:"TO0HZup2PyyxLsq1g7J59dqHqfLBnQ5UNtrZSHd5Vuo=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::fMlE1x1zGFY9sVkO',
+        'as' => 'generated::Zaz19MMDpqmLvSnR',
       ),
       'fallback' => false,
       'defaults' => 
@@ -786,7 +809,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::W3bZ65B1mu0IAo1C' => 
+    'generated::xWQyIz7VImDlUr1f' => 
     array (
       'methods' => 
       array (
@@ -812,7 +835,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::W3bZ65B1mu0IAo1C',
+        'as' => 'generated::xWQyIz7VImDlUr1f',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1123,6 +1146,43 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'paperwork.phase-1.kerani.print' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'kertas-kerja/fasa-1/semakan/kerani/{id}/print',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@printKerani',
+        'controller' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@printKerani',
+        'as' => 'paperwork.phase-1.kerani.print',
+        'namespace' => NULL,
+        'prefix' => '/kertas-kerja/fasa-1',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'paperwork.phase-1.pegawai.show' => 
     array (
       'methods' => 
@@ -1233,7 +1293,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'paperwork.phase-1.generated::MJTCVnJnChpdSR1f' => 
+    'paperwork.phase-1.generated::kzS3WlA7Uc4QY1t1' => 
     array (
       'methods' => 
       array (
@@ -1248,7 +1308,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@update',
         'controller' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@update',
-        'as' => 'paperwork.phase-1.generated::MJTCVnJnChpdSR1f',
+        'as' => 'paperwork.phase-1.generated::kzS3WlA7Uc4QY1t1',
         'namespace' => NULL,
         'prefix' => '/kertas-kerja/fasa-1',
         'where' => 
@@ -1269,7 +1329,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'paperwork.phase-1.generated::uWkJgxq2bW2qsbg0' => 
+    'paperwork.phase-1.generated::CNMigZNsQ2Rz4fpD' => 
     array (
       'methods' => 
       array (
@@ -1284,7 +1344,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@destroy',
         'controller' => 'App\\Http\\Controllers\\PaperworkPhase1Controller@destroy',
-        'as' => 'paperwork.phase-1.generated::uWkJgxq2bW2qsbg0',
+        'as' => 'paperwork.phase-1.generated::CNMigZNsQ2Rz4fpD',
         'namespace' => NULL,
         'prefix' => '/kertas-kerja/fasa-1',
         'where' => 
@@ -1342,7 +1402,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'paperwork.phase-2.generated::St4ze6hu3qjcdK3i' => 
+    'paperwork.phase-2.generated::ieLdWkmGROVsm1st' => 
     array (
       'methods' => 
       array (
@@ -1358,7 +1418,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@show',
         'controller' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@show',
-        'as' => 'paperwork.phase-2.generated::St4ze6hu3qjcdK3i',
+        'as' => 'paperwork.phase-2.generated::ieLdWkmGROVsm1st',
         'namespace' => NULL,
         'prefix' => '/kertas-kerja/fasa-2/kelulusan',
         'where' => 
@@ -1379,7 +1439,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'paperwork.phase-2.generated::VI63cN7lAdthgwn1' => 
+    'paperwork.phase-2.generated::6iu8QPIDpmdgBCNR' => 
     array (
       'methods' => 
       array (
@@ -1394,7 +1454,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@update',
         'controller' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@update',
-        'as' => 'paperwork.phase-2.generated::VI63cN7lAdthgwn1',
+        'as' => 'paperwork.phase-2.generated::6iu8QPIDpmdgBCNR',
         'namespace' => NULL,
         'prefix' => '/kertas-kerja/fasa-2/kelulusan',
         'where' => 
@@ -1415,7 +1475,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'paperwork.phase-2.generated::ylLbl6Mz8EeWyvtQ' => 
+    'paperwork.phase-2.generated::LYyzyBvp9qyWtdKP' => 
     array (
       'methods' => 
       array (
@@ -1431,7 +1491,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@print',
         'controller' => 'App\\Http\\Controllers\\PaperworkPhase2Controller@print',
-        'as' => 'paperwork.phase-2.generated::ylLbl6Mz8EeWyvtQ',
+        'as' => 'paperwork.phase-2.generated::LYyzyBvp9qyWtdKP',
         'namespace' => NULL,
         'prefix' => '/kertas-kerja/fasa-2/kelulusan',
         'where' => 

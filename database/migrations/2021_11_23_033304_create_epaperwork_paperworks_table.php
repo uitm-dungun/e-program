@@ -24,7 +24,9 @@ class CreateEpaperworkPaperworksTable extends Migration
             $table->string('budget_moneybank');
             $table->string('budget_grant');
             $table->string('budget_notes');
-            
+
+            $table->bool('status'); // Pending, Waiting For Approval, Accepted
+
             $table->json('officers');
             $table->json('budgets');
 

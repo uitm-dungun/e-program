@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EpaperworkPaperwork;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -20,19 +21,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function create()
     {
-        return view('paperworkphase1.create');
-        //
-        // return view('user.add', [
-        //     'name'=> $this->name;
-        //     'level_id'=> $this->level_id;
-        //     //'permission'=> $this->permission;
-        //     'title'=> $this->title;
-        //     'date_from'=> $this->date_from;
-        //     'date_until'=> $this->date_until;
-        //     'budgets'=> $this->budgets;
-        //     'status'=> $this->status[$this->budgets];
-        //     'details'=> $this->details;
-        // ]);
+        return view('paperworkphase1.ptj.create');
     }
 
     public function store(Request $request)
@@ -53,7 +42,7 @@ class PaperworkPhase1Controller extends Controller
 
         // KIV parse table inputs
         $paperwork->officers = json_encode($request->input('officers'));
-        $paperwork->budgets = json_encode([]);
+        $paperwork->budgets = json_encode($request->input('budgets'));
 
         $paperwork->save();
 
@@ -86,6 +75,14 @@ class PaperworkPhase1Controller extends Controller
     public function showKerani($id)
     {
         return view('paperworkphase1.kerani.show', ['epaperwork_paperwork' => EpaperworkPaperwork::find($id)]);
+    }
+
+    public function printKerani($id)
+    {
+        $pdf = PDF::loadView('paperworkphase1.kerani.print', []);
+        return $pdf->download('eprogram-paperwork-kerani.pdf');
+
+        // return view('paperworkphase1.kerani.print', ['epaperwork_paperwork' => EpaperworkPaperwork::find($id)]);
     }
 
     // public function showKerani(EpaperworkPaperwork $epaperwork_paperwork) : View

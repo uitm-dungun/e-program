@@ -1,4 +1,4 @@
-<x-layout class="mx-12 flex gap-8 flex-col" x-data="{ second: false }">
+<x-layout class="mx-12 mb-24 flex gap-8 flex-col" x-data="{ second: false }">
     <ul class="w-full steps">
         <li class="step step-primary">Butiran</li>
         <li class="step" x-bind:class="second ? 'step-primary' : ''">Bajet</li>
@@ -27,7 +27,7 @@
                         <input name="title" type="text" placeholder="isi tajuk program" class="input input-bordered">
                     </div>
                     <div class="flex gap-x-4">
-        
+
                     {{--
                     <x-datepicker>
                         <x-slot name="form_name">
@@ -57,7 +57,7 @@
                         <input type="time" id="appt" name="appt" min="09:00" max="18:00" class="input input-bordered">
                         </div>
                     </div>
-                    --}}                    
+                    --}}
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Tempat</span>
@@ -96,50 +96,50 @@
                         <textarea class="textarea h-24 textarea-bordered" name="objective" class="max" id="coverLetterText" cols="80" rows="12" background placeholder="Make a Pitch not more than 500 words"></textarea>
                     </div>
                 </div>
-                <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
-                    <div class="flex flex-col gap-4">
-                        <div class="overflow-x-auto">
-                            <table class="table w-full table-sm">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">MAKLUMAT PETUGAS</h3>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Nama</th>
-                                        <th>ID Program</th>
-                                        <th>Kad Pengenalan</th>
-                                        <th>Jawatan</th>
-                                        <th>No. Telefon</th>
-                                        <th>Kategori</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="input-officers">
-                                    <tr class="hover input-officer" id="input-officer-0">
-                                        <th>1</th>
-                                        <td><input type="text" name="officers[0][name]" placeholder="Isi Nama"></td>
-                                        <td><input type="text" name="officers[0][programid]" placeholder="Isi ID Program"></td>
-                                        <td><input type="text" name="officers[0][position]" placeholder="Isi Jawatan"></td>
-                                        <td><input type="text" name="officers[0][ic]" placeholder="Isi Kad Pengenalan"></td>
-                                        <td><input type="text" name="officers[0][phone]" placeholder="Isi No.Telefon"></td>
-                                        <td><select class="select select-bordered select-success w-full max-w-xs" name="officers[0][category]">
-                                            <option disabled="disabled" selected="selected">Pilih Kategori</option>
-                                            <option value="panel">Panel</option>
-                                            <option value="facilitator">Fasilitator</option>
-                                            </select>
-                                        </td>
-                                        <td><button type="button" onclick="inputRowRemove('officer', 0)">
-                                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                            </svg>
-                                        </button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <button type="button" class="btn btn-ghost self-center" id="add-new-officer"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg></button>
+            </div>
+            <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
+                <div class="flex flex-col gap-4">
+                    <div class="overflow-x-auto">
+                        <table class="table w-full table-sm">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 mb-5">Maklumat Petugas</h3>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Nama</th>
+                                    <th>ID Program</th>
+                                    <th>Kad Pengenalan</th>
+                                    <th>Jawatan</th>
+                                    <th>No. Telefon</th>
+                                    <th>Kategori</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="input-officers">
+                                <tr class="hover input-officer" id="input-officer-0">
+                                    <th>1</th>
+                                    <td><input type="text" name="officers[0][name]" placeholder="Isi Nama"></td>
+                                    <td><input type="text" name="officers[0][programid]" placeholder="Isi ID Program"></td>
+                                    <td><input type="text" name="officers[0][position]" placeholder="Isi Jawatan"></td>
+                                    <td><input type="text" name="officers[0][ic]" placeholder="Isi Kad Pengenalan"></td>
+                                    <td><input type="text" name="officers[0][phone]" placeholder="Isi No.Telefon"></td>
+                                    <td><select class="select select-bordered select-success w-full max-w-xs" name="officers[0][category]">
+                                        <option disabled="disabled" selected="selected">Pilih Kategori</option>
+                                        <option value="panel">Panel</option>
+                                        <option value="facilitator">Fasilitator</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" onclick="inputRowRemove('officer', 0)">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <button type="button" class="btn btn-ghost self-center" id="add-new-officer"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg></button>
                 </div>
             </div>
         </div>
@@ -179,31 +179,47 @@
                             </label>
                             <textarea name="budget_notes" class="textarea h-24 textarea-bordered" placeholder="catatan"></textarea>
                         </div>
-                        <div class="overflow-x-auto">
-                        <table class="table w-full">
-                            <thead>
-                            <tr>
-                                <th>Perkara</th>
-                                <th>RM/Unit</th>
-                                <th>Kuantiti</th>
-                                <th>Jumlah(RM)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="hover">
-                                    <td><input type="text" name="budget_item_1" placeholder="Isi perkara"></td>
-                                    <td><input type="number" name="budget_price_1" placeholder="Isi harga" min="0.00"></td>
-                                    <td><input type="number" name="budget_quantity_1" placeholder="Isi perkara" min="0"></td>
-                                    <td>RM0.00</td>
-                                </tr>
-                                <tr class="hover">
-                                    <td><input type="text" name="budget_item_2" placeholder="Isi perkara"></td>
-                                    <td><input type="number" name="budget_price_2" placeholder="Isi harga" min="0.00"></td>
-                                    <td><input type="number" name="budget_quantity_2" placeholder="Isi perkara" min="0"></td>
-                                    <td>RM0.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    </div>
+                    <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
+                        <div class="flex flex-col gap-4">
+                            <div class="overflow-x-auto">
+                                <table class="table w-full table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Butiran</th>
+                                            <th>Harga / Unit</th>
+                                            <th>Kuantiti</th>
+                                            <th>Jumlah</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="input-budgets">
+                                        <tr class="hover input-budget" id="input-budget-0">
+                                            <th>1</th>
+                                            <td><input type="text" name="budgets[0][detail]" placeholder="butiran"></td>
+                                            <td><input type="text" name="budgets[0][price_per_unit]" placeholder="Harga / Unit"></td>
+                                            <td><input type="text" name="budgets[0][quantity]" placeholder="Kuantiti"></td>
+                                            <td><input type="text" value="N/A" readonly></td>
+                                            <td><button type="button" onclick="inputRowRemove('budget', 0)">
+                                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                          <th colspan="4">Jumlah Kesluruhan</th>
+                                          <th colspan="2">RM150</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <button type="button" class="btn btn-ghost self-center" id="add-new-budget"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg></button>
                         </div>
                     </div>
                 </div>
@@ -236,9 +252,9 @@
                 }
             });
 
-            // Maklumat petugas <==> Officer
+            // Table petugas <==> Officer
             $('#add-new-officer').click(() => {
-                reindexRows('officer');
+                reindexRowsOfficer('officer');
                 // Append
                 let i = $('.input-officer').length; // No need to add 1 because of index starts at 0, length +1 index
                 $('#input-officers').append(`
@@ -260,17 +276,43 @@
                             <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
                             </svg>
                         </button></td>
-                    </tr>                        
+                    </tr>
+                `);
+            });
+
+            // Table budget
+            $('#add-new-budget').click(() => {
+                reindexRowsBudget('budget');
+                // Append
+                let i = $('.input-budget').length; // No need to add 1 because of index starts at 0, length +1 index
+                $('#input-budgets').append(`
+                    <tr class="hover input-budget" id="input-budget-${i}">
+                        <th>${i+1}</th>
+                        <td><input type="text" name="budgets[${i}][detail]" placeholder="butiran"></td>
+                        <td><input type="text" name="budgets[${i}][price_per_unit]" placeholder="Harga / Unit"></td>
+                        <td><input type="text" name="budgets[${i}][quantity]" placeholder="Kuantiti"></td>
+                        <td><input type="text" value="N/A" readonly></td>
+                        <td><button type="button" onclick="inputRowRemove('budget', ${i})">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button></td>
+                    </tr>
                 `);
             });
         }); //end if ready(fn)
 
+        // Task : Refactor
         function inputRowRemove(name,index) {
             $(`#input-${name}-${index}`).remove();
-            reindexRows(name);
+            if(name === 'officer') {
+                reindexRowsOfficer(name);
+            } else if (name === 'budget') {
+                reindexRowsBudget(name);
+            }
         }
 
-        function reindexRows(title) {
+        function reindexRowsOfficer(title) {
             // Reindex all elements
             $(`.input-${title}`).each((i, el) => {
                 $(el).attr("id",`input-${title}-${i}`)
@@ -284,7 +326,19 @@
                 $(el).eq(0).children().eq(7).children().first().attr('onclick', `inputRowRemove('${title}', ${i})`)
             })
         }
-    </script>    
+
+        function reindexRowsBudget(title) {
+            // Reindex all elements
+            $(`.input-${title}`).each((i, el) => {
+                $(el).attr("id",`input-${title}-${i}`)
+                $(el).eq(0).children().eq(0).text(i+1)
+                $(el).eq(0).children().eq(1).children().first().attr('name', `${title}s[${i}][detail]`)
+                $(el).eq(0).children().eq(2).children().first().attr('name', `${title}s[${i}][price_per_unit]`)
+                $(el).eq(0).children().eq(3).children().first().attr('name', `${title}s[${i}][quantity]`)
+                $(el).eq(0).children().eq(5).children().first().attr('onclick', `inputRowRemove('${title}', ${i})`)
+            })
+        }
+    </script>
 
 
 
