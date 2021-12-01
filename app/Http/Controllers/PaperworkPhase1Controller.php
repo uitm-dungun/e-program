@@ -16,7 +16,20 @@ class PaperworkPhase1Controller extends Controller
 
     public function index()
     {
-        return view('paperworkphase1.index', ['paperworks' => EpaperworkPaperwork::all()]);
+        if (auth()->user()->type == 'ptj') {
+            $statuses = ['Pending', 'To Review', 'Accepted'];
+        } elseif (auth()->user()->type == 'kerani') {
+            $statuses = ['Pending'];
+        } else {
+            $statuses = ['Reviewed'];
+        }
+        $paperworks = EpaperworkPaperwork::where('status', $statuses[0]);
+        foreach ($statuses as $status) {
+            $paperworks = $paperworks->orWhere('status', $status);
+        }
+        $paperworks = $paperworks->get();
+
+        return view('paperworkphase1.index', ['paperworks' => $paperworks]);
     }
 
     public function create()
@@ -43,6 +56,8 @@ class PaperworkPhase1Controller extends Controller
         // KIV parse table inputs
         $paperwork->officers = json_encode($request->input('officers'));
         $paperwork->budgets = json_encode($request->input('budgets'));
+
+        $paperwork->status = "Pending";
 
         $paperwork->save();
 

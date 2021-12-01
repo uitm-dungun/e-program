@@ -22,7 +22,17 @@ class EpaperworkPaperworkFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => 'abc',
+            'venue' => 'abc',
+            'total_participants' => 2,
+            'target_participants' => 2,
+            'objective' => 'abc',
+            'budget_moneybank' => 'abc',
+            'budget_grant' => 'abc',
+            'budget_notes' => 'abc',
+            'status' => 'Pending',
+            'officers' => "[]",
+            'budgets' => "[]",
         ];
     }
 }

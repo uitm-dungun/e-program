@@ -12,9 +12,9 @@
         </a>
         </div>
         <div class="flex-grow space-y-4 justify-center">
-        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Tunggu Respon
-        </button>
-        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">0 | Lulus
+            <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">{{ $paperworks->where('status', 'Pending')->count() }} | Tunggu Respon
+            </button>
+        <button class="btn btn-outline btn-block btn-lg hover:text-white-500 shadow-lg">{{ $paperworks->where('status', 'Accepted')->count() }} | Lulus
         </button>
         </div>
 
@@ -39,6 +39,7 @@
                         </button>
                     </div>
                 </div>
+                @if (auth()->user()->type == 'ptj')
                 <div class="dropdown dropdown-end">
                     <div tabindex="0" class="m-1 btn btn-outline btn-xs rounded-md pr-1">
                         status
@@ -49,6 +50,11 @@
                         </svg>
                     </div>
                     <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                        {{-- @foreach ($statuses as $status)
+                            <li>
+                                <a>{{ $status }}</a>
+                            </li>
+                        @endforeach --}}
                         <li>
                             <a>Lulus</a>
                         </li>
@@ -60,6 +66,7 @@
                         </li>
                     </ul>
                 </div>
+                @endif
             </div>
             <div class="overflow-x-auto">
                 <table class="table w-full table-compact">
@@ -81,12 +88,27 @@
                             </td>
                             <td>{{ $paperwork->created_at->toFormattedDateString() }}</td>
                             <td>{{ $paperwork->updated_at->toFormattedDateString() }}</td>
-                            <td><a href="{{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}" class="btn btn-xs btn-primary btn-square"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                            clip-rule="evenodd" />
-                                    </svg></a></td>
+                            <td><a
+                                href="{{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}
+                                    {{-- @if ($paperwork->status == 'Pending')
+                                        {{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}
+                                    @elseif ($paperwork->status == 'Reviewed')
+                                        {{ route('paperwork.phase-1.pegawai.show', $paperwork->id) }}
+                                    @elseif ($paperwork->status==   'Accepted')
+                                        {{ route('paperwork.phase-1.pegawai.show', $paperwork->id) }}
+                                    @elseif ($paperwork->status=='To Review')
+                                        {{ route('paperwork.phase-1.ptj.index', $paperwork->id) }}
+                                    @elseif ($paperwork->status=='Rejected')
+                                        {{ route('paperwork.phase-1.pegawai.show', $paperwork->id) }}
+                                    @endif --}}
+                                "
+                                class="btn btn-xs btn-primary btn-square"
+                            ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg></a></td>
                         </tr>
                         @endforeach
                     </tbody>
