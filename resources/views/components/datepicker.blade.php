@@ -5,7 +5,7 @@
             <label for="datepicker" class="label">
                 <span class="label-text">{{ $slot }}</span>
             </label>
-            
+
             <div class="relative">
                 <input name="{{ $form_name }}" type="hidden" name="date" x-ref="date" :value="datepickerValue" />
                 <input type="text" x-on:click="initDate(datepickerValue), showDatepicker = !showDatepicker" x-model="datepickerValue"
@@ -44,10 +44,10 @@
                             <button type="button"
                                 class="inline-flex p-1 transition duration-100 ease-in-out rounded-full cursor-pointer focus:outline-none focus:shadow-outline hover:bg-gray-100"
                                 @click="if (month == 11) {
-                                                month = 0; 
+                                                month = 0;
                                                 year++;
                                             } else {
-                                                month++; 
+                                                month++;
                                             } getNoOfDays()">
                                 <svg class="inline-flex w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -75,9 +75,9 @@
                                 <div @click="getDateValue(date)" x-text="date"
                                     class="text-sm leading-none leading-loose text-center transition duration-100 ease-in-out rounded-full cursor-pointer"
                                     :class="{
-                        'bg-primary': isToday(date) == true, 
+                        'bg-primary': isToday(date) == true,
                         'text-gray-600 hover:bg-primary': isToday(date) == false && isSelectedDate(date) == false,
-                        'bg-primary-focus text-white hover:bg-opacity-75': isSelectedDate(date) == true 
+                        'bg-primary-focus text-white hover:bg-opacity-75': isSelectedDate(date) == true
                     }"></div>
                             </div>
                         </template>

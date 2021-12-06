@@ -3,7 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\EpaperworkPaperwork;
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Date;
 
 class EpaperworkPaperworkFactory extends Factory
 {
@@ -27,10 +30,16 @@ class EpaperworkPaperworkFactory extends Factory
             'total_participants' => 2,
             'target_participants' => 2,
             'objective' => 'abc',
+
+            'begin_date' => new Carbon('2021-01-01'),
+            'begin_time' => '12:00:00',
+            'end_date' => new Carbon('2021-01-01'),
+            'end_time' => '12:00:00',
+
             'budget_moneybank' => 'abc',
             'budget_grant' => 'abc',
             'budget_notes' => 'abc',
-            'status' => 'Pending',
+
             'officers' => "[]",
             'budgets' => "[]",
         ];

@@ -28,19 +28,19 @@
                     </div>
                     <div class="flex gap-x-4">
 
-                    {{--
                     <x-datepicker>
                         <x-slot name="form_name">
-                            tarikh-mula
+                            begin_date
                         </x-slot>
                         Tarikh Mula
                     </x-datepicker>
+
                     <x-datepicker>
                         <x-slot name="form_name">
-                            tarikh-akhir
+                            end_date
                         </x-slot>
                         Tarikh Akhir
-                    </x-datepicker> --}}
+                    </x-datepicker>
                     </div>
                     {{--
                     <div class="flex gap-x-4">

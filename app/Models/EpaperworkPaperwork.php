@@ -13,7 +13,8 @@ class EpaperworkPaperwork extends Model
         'budgets' => 'array',
     ];
 
-    // public function getBudget() {
-    //     return $this->total_participants * 5.2;
-    // }
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 }
