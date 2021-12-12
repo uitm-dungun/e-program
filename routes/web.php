@@ -1,9 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\PaperworkReceiverController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaperworkPhase1Controller;
-use App\Http\Controllers\PaperworkPhase2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,35 +16,23 @@ use App\Http\Controllers\PaperworkPhase2Controller;
 |
 */
 
-Route::redirect('/', '/kertas-kerja/fasa-1');
+Route::redirect('/', '/ciptaan/kertas-kerja');
 
 // Basic authentication
 Route::get('/login', [ AuthenticatedSessionController::class, 'create' ])->name('login');
 Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ])->name('authenticate');
-Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
+Route::get('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
 
-// Route::get('/register');
+Route::get('/error', fn() => 'Whoops an error occured');
 
-Route::prefix('/kertas-kerja/fasa-1')->name('paperwork.phase-1.')->group(function () {
-    Route::get('/',                           [ PaperworkPhase1Controller::class, 'index' ])->name('index');
-    Route::get('/show',                       [ PaperworkPhase1Controller::class, 'show' ])->name('show');
-    Route::get('/permohonan',                 [ PaperworkPhase1Controller::class, 'create' ])->name('create');
-    Route::post('/',                          [ PaperworkPhase1Controller::class, 'store' ])->name('store');
-
-    Route::get('/semakan/kerani/{id}',        [ PaperworkPhase1Controller::class, 'showKerani' ])->name('kerani.show');
-    Route::get('/semakan/kerani/{id}/print',  [ PaperworkPhase1Controller::class, 'printKerani' ])->name('kerani.print');
-    Route::get('/semakan/{id}/pegawai',       [ PaperworkPhase1Controller::class, 'showPegawai' ])->name('pegawai.show');
-
-    Route::put('/semakan/{id}/pegawai',       [ PaperworkPhase1Controller::class, 'reject' ])->name('pegawai.reject');
-
-    Route::get('/semakan/{id}/cetak',         [ PaperworkPhase1Controller::class, 'print' ]);
-    Route::put('/{id}',                       [ PaperworkPhase1Controller::class, 'update' ]);
-    Route::delete('/{id}',                    [ PaperworkPhase1Controller::class, 'destroy' ]);
+Route::prefix('ciptaan/kertas-kerja')
+    ->middleware(['auth', 'role:creator'])
+    ->name('paperwork.creation.')
+    ->group(function() {
+        Route::resource('', PaperworkReceiverController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy']);
 });
 
-Route::prefix('/kertas-kerja/fasa-2/kelulusan')->name('paperwork.phase-2.')->group(function () {
-    Route::get('/',                     [ PaperworkPhase2Controller::class, 'index' ]);
-    Route::get('/{id}',                 [ PaperworkPhase2Controller::class, 'show' ]);
-    Route::put('/{id}/hantar-semula',   [ PaperworkPhase2Controller::class, 'update' ]);
-    Route::get('/{id}/cetak',           [ PaperworkPhase2Controller::class, 'print' ]);
-});
+// TODO: Continue this pattern for other 'role types' as well.
+
+// TODO: Design routes and it's controller for the 'supporter' feature

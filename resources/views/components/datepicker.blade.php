@@ -1,4 +1,4 @@
-<div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+<div x-data="app()" x-init="[initDate(), getNoOfDays()]">
     <div class="container mx-auto">
         <div class="mb-5">
             {{-- <label for="datepicker" class="font-bold mb-1 text-gray-700 block">Select Date</label> --}}
@@ -12,7 +12,7 @@
                     x-on:keydown.escape="showDatepicker = false"
                     {{-- class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium" --}}
                     class="input input-bordered"
-                    placeholder="Select date" />
+                    placeholder="Select date" readonly/>
 
                 <div class="absolute top-0 right-0 px-3 h-full flex items-center">
                     <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="absolute top-0 left-0 p-4 mt-12 bg-white rounded-lg shadow" style="width: 17rem"
-                    x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+                    x-show.transition="showDatepicker" @click.away="showDatepicker = false" x-cloak>
                     <div class="flex items-center justify-between mb-2">
                         <div>
                             <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>

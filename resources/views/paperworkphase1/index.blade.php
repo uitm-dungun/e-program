@@ -84,7 +84,7 @@
                         <tr class="hover">
                             <td><a href="{{ route('paperwork.phase-1.kerani.show', $paperwork->id) }}">{{ $paperwork->title }}</a></td>
                             <td>
-                                <div class="badge badge-success">{{ $paperwork->status->name }}</div>
+                                <div class="badge {{ $paperwork->status->className }}">{{ $paperwork->status->name }}</div>
                             </td>
                             <td>{{ $paperwork->created_at->toFormattedDateString() }}</td>
                             <td>{{ $paperwork->updated_at->toFormattedDateString() }}</td>

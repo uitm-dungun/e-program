@@ -18,82 +18,75 @@
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col gap-y-4">
-                <div class="p-5 rounded-lg shadow-md flex flex-col gap-4">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Tajuk</span>
-                        </label>
-                        <input name="title" type="text" placeholder="isi tajuk program" class="input input-bordered">
-                    </div>
-                    <div class="flex gap-x-4">
-
-                    <x-datepicker>
-                        <x-slot name="form_name">
-                            begin_date
-                        </x-slot>
-                        Tarikh Mula
-                    </x-datepicker>
-
-                    <x-datepicker>
-                        <x-slot name="form_name">
-                            end_date
-                        </x-slot>
-                        Tarikh Akhir
-                    </x-datepicker>
-                    </div>
-                    {{--
-                    <div class="flex gap-x-4">
-                        <div class="form-control px-8">
+            <div class="flex gap-x-8">
+                <div class="flex-1 flex flex-col gap-y-4">
+                    <div class="p-5 rounded-lg shadow-md flex flex-col gap-4">
+                        <div class="form-control">
                             <label class="label">
-                                <span class="label-text">Masa Mula</span>
+                                <span class="label-text">Tajuk</span>
                             </label>
+                            <input name="title" type="text" placeholder="isi tajuk program" class="input input-bordered">
+                        </div>
+                        <div class="flex gap-x-4">
+                        <x-datepicker>
+                            <x-slot name="form_name">
+                                begin_date
+                            </x-slot>
+                            Tarikh Mula
+                        </x-datepicker>
+                        <x-datepicker>
+                            <x-slot name="form_name">
+                                end_date
+                            </x-slot>
+                            Tarikh Akhir
+                        </x-datepicker>
+                        </div>
+                        {{--
+                        <div class="flex gap-x-4">
+                            <div class="form-control px-8">
+                                <label class="label">
+                                    <span class="label-text">Masa Mula</span>
+                                </label>
+                                <input type="time" id="appt" name="appt" min="09:00" max="18:00" class="input input-bordered">
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Masa Habis</span>
+                                </label>
                             <input type="time" id="appt" name="appt" min="09:00" max="18:00" class="input input-bordered">
+                            </div>
+                        </div>
+                        --}}
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Tempat</span>
+                            </label>
+                            <input name="venue" type="text" placeholder="tempat" class="input input-bordered">
                         </div>
                         <div class="form-control">
                             <label class="label">
-                                <span class="label-text">Masa Habis</span>
+                                <span class="label-text">Jumlah Peserta</span>
                             </label>
-                        <input type="time" id="appt" name="appt" min="09:00" max="18:00" class="input input-bordered">
+                            <input name="total_participants" type="number" placeholder="jum_peserta" class="input input-bordered">
                         </div>
-                    </div>
-                    --}}
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Tempat</span>
-                        </label>
-                        <input name="venue" type="text" placeholder="tempat" class="input input-bordered">
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Jumlah Peserta</span>
-                        </label>
-                        <input name="total_participants" type="number" placeholder="jum_peserta" class="input input-bordered">
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Sasaran Peserta</span>
-                        </label>
-                        <input name="target_participants" type="number" placeholder="sasaran_peserta" class="input input-bordered">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Sasaran Peserta</span>
+                            </label>
+                            <input name="target_participants" type="number" placeholder="sasaran_peserta" class="input input-bordered">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
-                <div class="flex flex-col">
-                    <div class="form-control py-5">
-                        <div class="alert alert-warning">
-                            <div class="flex-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                </svg>
-                                <label>Perkataan Tidak Lebih Dari 500!</label>
-                            </div>
+                <div class="rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
+                    <div class="flex flex-col">
+                        <div class="form-control py-4">
+                            <label class="label mb-2">
+                                <span class="label-text">Objektif</span>
+                            </label>
+                            <!-- textarea class="textarea h-24 textarea-bordered" placeholder="objektif program"></textarea -->
+                            <textarea class="textarea textarea-bordered mb-4" name="objective" class="max" id="coverLetterText" rows="8" background></textarea>
+                            <span class="text-gray-400 text-sm">* Objektif mesti kurang dari 500 patah perkataan</span>
                         </div>
-                        <label class="label">
-                            <span class="label-text">Objektif</span>
-                        </label>
-                        <!-- textarea class="textarea h-24 textarea-bordered" placeholder="objektif program"></textarea -->
-                        <textarea class="textarea h-24 textarea-bordered" name="objective" class="max" id="coverLetterText" cols="80" rows="12" background placeholder="Make a Pitch not more than 500 words"></textarea>
                     </div>
                 </div>
             </div>

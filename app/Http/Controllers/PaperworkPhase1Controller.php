@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EpaperworkPaperwork;
+use App\Models\Paperwork;
 use App\Models\Status;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
@@ -19,47 +20,22 @@ class PaperworkPhase1Controller extends Controller
 
     public function index()
     {
-        // if (auth()->user()->type == 'ptj') {
+        if (auth()->user()->type == 'ptj') {
             $statusNames = ['Pending', 'Accepted', 'To Review',];
-        // } elseif (auth()->user()->type == 'kerani') {
-        //     $statusNames = ['Pending'];
-        // } else {
-        //     $statusNames = ['Reviewed'];
-        // }
-        // $statusNames = [['name', '=', 'Pending']];
-
-        // Query Status Only
-        $buildStatuses = Status::where('name', $statusNames[0]);
-        foreach ($statusNames as $statusName) {
-            $buildStatuses = $buildStatuses->orWhere('name', $statusName);
+        } elseif (auth()->user()->type == 'kerani') {
+            $statusNames = ['Pending'];
+        } else {
+            $statusNames = ['Reviewed'];
         }
-        $statuses = $buildStatuses->get();
 
-        // Collect all paperworks from each statuses
+        $paperworks = Paperwork::whereHas('status', function(Builder $query) use ($statusNames) {
+            $query->where('name', '=', $statusNames[0]);
+            foreach ($statusNames as $statusName) {
+                $query->orWhere('name', '=', $statusName);
+            }
+        })->get();
 
-        $paperworkssssss = [];
-        dd($statuses[1]->paperworks());
-        foreach ($statuses as $status) {
-            // dd($status->paperworks());
-            // array_push($paperworkssssss, $status->paperworks());
-        }
-        return '';
-        return collect($paperworkssssss);
-
-        // dd($statuses);
-
-        return '';
-        return $statuses[0]->paperworks()->get();
-
-        // $paperworks = EpaperworkPaperwork::with(['status' => function ($query) use ($statuses){
-        //     $query->where('name', $statuses[0]);
-        //     foreach ($statuses as $status) {
-        //         $query = $query->orWhere('name', $status);
-        //     }
-        // }])->get();
-        // $paperworks = $paperworks->get();
-
-        // return view('paperworkphase1.index', ['paperworks' => $paperworks]);
+        return view('paperworkphase1.index', ['paperworks' => $paperworks]);
     }
 
     public function create()
@@ -69,7 +45,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function store(Request $request)
     {
-        $paperwork = new EpaperworkPaperwork();
+        $paperwork = new Paperwork();
 
         // Step 1
         $paperwork->title = $request->input('title');
@@ -124,7 +100,7 @@ class PaperworkPhase1Controller extends Controller
 
     public function showKerani($id)
     {
-        return view('paperworkphase1.kerani.show', ['epaperwork_paperwork' => EpaperworkPaperwork::find($id)]);
+        return view('paperworkphase1.kerani.show', ['epaperwork_paperwork' => Paperwork::find($id)]);
     }
 
     public function printKerani($id)

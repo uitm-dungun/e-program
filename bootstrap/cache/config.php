@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:Q6vCqpm80H6oudy84P3vcD13pqEEfwfmfW7vfI/93/o=',
+    'key' => 'base64:kWBFfIDfgOfT4G+BzOVRvItbeAiLmHhF2iwePpO6ogw=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -127,7 +127,7 @@
   'breadcrumbs' => 
   array (
     'view' => 'components.breadcrumbs',
-    'files' => 'C:\\laragon\\www\\e-program\\routes/breadcrumbs.php',
+    'files' => 'C:\\dev\\projects@official\\e-program\\routes/breadcrumbs.php',
     'unnamed-route-exception' => true,
     'missing-route-bound-breadcrumb-exception' => true,
     'invalid-named-breadcrumb-exception' => true,
@@ -195,7 +195,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\e-program\\storage\\framework/cache/data',
+        'path' => 'C:\\dev\\projects@official\\e-program\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -289,8 +289,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'e_program',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'general',
+        'password' => 'password',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -309,8 +309,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'e_program',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'general',
+        'password' => 'password',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -324,8 +324,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'e_program',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'general',
+        'password' => 'password',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -366,12 +366,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\e-program\\storage\\app',
+        'root' => 'C:\\dev\\projects@official\\e-program\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\e-program\\storage\\app/public',
+        'root' => 'C:\\dev\\projects@official\\e-program\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -389,7 +389,7 @@
     ),
     'links' => 
     array (
-      'C:\\laragon\\www\\e-program\\public\\storage' => 'C:\\laragon\\www\\e-program\\storage\\app/public',
+      'C:\\dev\\projects@official\\e-program\\public\\storage' => 'C:\\dev\\projects@official\\e-program\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -423,13 +423,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\dev\\projects@official\\e-program\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\dev\\projects@official\\e-program\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -480,7 +480,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\laragon\\www\\e-program\\storage\\logs/laravel.log',
+        'path' => 'C:\\dev\\projects@official\\e-program\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -546,7 +546,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\laragon\\www\\e-program\\resources\\views/vendor/mail',
+        0 => 'C:\\dev\\projects@official\\e-program\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -647,7 +647,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\e-program\\storage\\framework/sessions',
+    'files' => 'C:\\dev\\projects@official\\e-program\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -667,9 +667,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\e-program\\resources\\views',
+      0 => 'C:\\dev\\projects@official\\e-program\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\e-program\\storage\\framework\\views',
+    'compiled' => 'C:\\dev\\projects@official\\e-program\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -677,10 +677,10 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'font_dir' => 'C:\\laragon\\www\\e-program\\storage\\fonts/',
-      'font_cache' => 'C:\\laragon\\www\\e-program\\storage\\fonts/',
-      'temp_dir' => 'C:\\Users\\ASUS\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\laragon\\www\\e-program',
+      'font_dir' => 'C:\\dev\\projects@official\\e-program\\storage\\fonts/',
+      'font_cache' => 'C:\\dev\\projects@official\\e-program\\storage\\fonts/',
+      'temp_dir' => 'C:\\Users\\NICERA~1\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\dev\\projects@official\\e-program',
       'enable_font_subsetting' => false,
       'pdf_backend' => 'CPDF',
       'default_media_type' => 'screen',
@@ -737,7 +737,7 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Http\\Livewire',
-    'view_path' => 'C:\\laragon\\www\\e-program\\resources\\views/livewire',
+    'view_path' => 'C:\\dev\\projects@official\\e-program\\resources\\views/livewire',
     'layout' => 'layouts.app',
     'asset_url' => NULL,
     'app_url' => NULL,

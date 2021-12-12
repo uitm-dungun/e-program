@@ -28,14 +28,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($epaperwork_paperwork->budgets as $budget)
+                            {{-- @foreach ($epaperwork_paperwork->budgets as $budget)
                                 <tr>
                                     <td>{{ $budget['detail'] }}</td>
                                     <td>{{ $budget['price_per_unit'] }}</td>
                                     <td>{{ $budget['quantity'] }}</td>
                                     <td>{{ $budget['price_per_unit'] * $budget['quantity'] }}</td>
                                 </tr>
-                            @endforeach
+                            @endforeach --}}
                         </tbody>
                     </table>
                 </div>
