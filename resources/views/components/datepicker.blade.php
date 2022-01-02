@@ -1,6 +1,6 @@
 <div x-data="app()" x-init="[initDate(), getNoOfDays()]">
     <div class="container mx-auto">
-        <div class="mb-5">
+        <div class="">
             {{-- <label for="datepicker" class="font-bold mb-1 text-gray-700 block">Select Date</label> --}}
             <label for="datepicker" class="label">
                 <span class="label-text">{{ $slot }}</span>

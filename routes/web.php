@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\PaperworkCreatorController;
 use App\Http\Controllers\PaperworkReceiverController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/ciptaan/kertas-kerja');
+// eprogram.com/ciptaan/kertas-kerja
+
+// TODO: Design root route to redirect specific users to specific routes based on their roles
+// Route::redirect('/', '/ciptaan/kertas-kerja');
 
 // Basic authentication
 Route::get('/login', [ AuthenticatedSessionController::class, 'create' ])->name('login');
@@ -25,11 +29,14 @@ Route::get('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->nam
 
 Route::get('/error', fn() => 'Whoops an error occured');
 
+// ciptaan/kertas-kerja/
+
+// PTJ, Student,
 Route::prefix('ciptaan/kertas-kerja')
     ->middleware(['auth', 'role:creator'])
     ->name('paperwork.creation.')
     ->group(function() {
-        Route::resource('', PaperworkReceiverController::class)
+        Route::resource('', PaperworkCreatorController::class)
             ->only(['index', 'show', 'create', 'store', 'destroy']);
 });
 

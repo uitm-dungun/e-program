@@ -3,13 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components { */
-/* .btn {
-    @apply rounded-md;
-} */
 .tracking-widest {
     letter-spacing: 0.36em;
 }
 
 [x-cloak] { display: none !important; }
-/* } */
+
+.label {
+    @apply px-0;
+}
+
+.label-text {
+    @apply uppercase font-bold text-xs text-gray-400;
+}
+
+.input-bordered {
+    @apply rounded-none;
+}

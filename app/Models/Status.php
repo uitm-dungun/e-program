@@ -11,6 +11,6 @@ class Status extends Model
 
     public function paperworks()
     {
-        return $this->hasMany(EpaperworkPaperwork::class);
+        return $this->hasMany(Paperwork::class);
     }
 }
