@@ -40,6 +40,14 @@ Route::prefix('ciptaan/kertas-kerja')
             ->only(['index', 'show', 'create', 'store', 'destroy']);
 });
 
+Route::put('/post/{id}', function ($id) {
+    //
+})->middleware('role:acceptor');
+
+Route::put('/post/{id}', function ($id) {
+    //
+})->middleware('role:creator');
+
 // TODO: Continue this pattern for other 'role types' as well.
 
 // TODO: Design routes and it's controller for the 'supporter' feature

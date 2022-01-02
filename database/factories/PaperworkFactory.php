@@ -40,6 +40,7 @@ class PaperworkFactory extends Factory
 
             'officers' => "[]",
             'budgets' => "[]",
+
         ];
     }
 }
