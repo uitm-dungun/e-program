@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
         $role_types['validator_ptj']    = RoleType::create(['name' => 'validator', 'type' => 'ptj']);
         $role_types['acceptor_ptj']     = RoleType::create(['name' => 'acceptor', 'type' => 'ptj']);
 
-        // TODO: Seed Supporter Table
+        // TODO: Seed Supporter Table, supporter requirement?
 
         User::factory()->for($role_types['creator_ptj'])->create(['email' => 'admin@example.com',   'name' => 'admin', 'password' => Hash::make('password')]);
         // User::create(['email' => 'ptj@example.com',     'name' => 'ptj', 'password' => Hash::make('password')]);

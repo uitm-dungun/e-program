@@ -48,6 +48,10 @@ Route::put('/post/{id}', function ($id) {
     //
 })->middleware('role:creator');
 
+Route::put('/post/{id}', function ($id) {
+    //
+})->middleware('role:supporter');
+
 // TODO: Continue this pattern for other 'role types' as well.
 
 // TODO: Design routes and it's controller for the 'supporter' feature
