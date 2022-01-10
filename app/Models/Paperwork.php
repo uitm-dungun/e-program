@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Supporter\Supporter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,5 +22,10 @@ class Paperwork extends Model
     public function isSupported()
     {
         return true;
+    }
+
+    public function supports()
+    {
+        return $this->hasMany(Supporter::class);
     }
 }

@@ -1,5 +1,6 @@
 module.exports = {
-  purge: [
+  content: [
+    './storage/framework/views/*.php',
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
@@ -14,4 +15,9 @@ module.exports = {
   plugins: [
     require('daisyui'),
   ],
+  daisyui: {
+      themes: [
+          'light',
+      ]
+  }
 }

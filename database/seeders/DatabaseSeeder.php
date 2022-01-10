@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         Paperwork::factory()->for($statuses['rejected'])->create();
 
         $role_types = [];
+        $role_types['super_admin']      = RoleType::create(['name' => 'admin', 'type' => 'super']);
         $role_types['creator_ptj']      = RoleType::create(['name' => 'creator', 'type' => 'ptj']);
         $role_types['supporter_ptj']    = RoleType::create(['name' => 'supporter', 'type' => 'ptj']);
         $role_types['validator_ptj']    = RoleType::create(['name' => 'validator', 'type' => 'ptj']);
@@ -39,7 +40,26 @@ class DatabaseSeeder extends Seeder
 
         // TODO: Seed Supporter Table, supporter requirement?
 
-        User::factory()->for($role_types['creator_ptj'])->create(['email' => 'admin@example.com',   'name' => 'admin', 'password' => Hash::make('password')]);
+        User::factory()->for($role_types['super_admin'])->create(
+            ['email' => 'super@admin.com', 'name' => 'super admin', 'password' => Hash::make('password')]
+        );
+
+        User::factory()->for($role_types['creator_ptj'])->create(
+            ['email' => 'creator@ptj.com',   'name' => 'creator ptj', 'password' => Hash::make('password')]
+        );
+
+        User::factory()->for($role_types['supporter_ptj'])->create(
+            ['email' => 'supporter@ptj.com',   'name' => 'supporter ptj', 'password' => Hash::make('password')]
+        );
+
+        User::factory()->for($role_types['validator_ptj'])->create(
+            ['email' => 'validator@ptj.com',   'name' => 'validator ptj', 'password' => Hash::make('password')]
+        );
+
+        User::factory()->for($role_types['acceptor_ptj'])->create(
+            ['email' => 'acceptor@ptj.com',   'name' => 'acceptor ptj', 'password' => Hash::make('password')]
+        );
+
         // User::create(['email' => 'ptj@example.com',     'name' => 'ptj', 'password' => Hash::make('password')]);
         // User::create(['email' => 'kerani@example.com',  'name' => 'kerani', 'password' => Hash::make('password')]);
         // User::create(['email' => 'pegawai@example.com', 'name' => 'pegawai', 'password' => Hash::make('password')]);

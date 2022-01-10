@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\PaperworkCreatorController;
-use App\Http\Controllers\PaperworkReceiverController;
+use App\Http\Controllers\PaperworkValidationController;
+use App\Http\Controllers\PaperworkCreationController;
+use App\Http\Controllers\PaperworkSupportController;
+use App\Http\Controllers\PaperworkAcceptanceController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,38 +23,72 @@ use Illuminate\Support\Facades\Route;
 // eprogram.com/ciptaan/kertas-kerja
 
 // TODO: Design root route to redirect specific users to specific routes based on their roles
-// Route::redirect('/', '/ciptaan/kertas-kerja');
+
+Route::get('/', function() {
+    // If guest
+    if (Auth::guest())
+        return redirect()->route('login');
+
+    // If admin
+    if (Auth::user()->roleType->name == 'admin')
+        return redirect()->route('paperwork.acceptance.index');
+
+    // Else standard user
+    // Generate the route name
+    $route_name =
+        "paperwork." .
+        [
+            // Role => Action
+            // TODO Implement getter 'roleType->action' in user model
+            'creator' => 'creation',
+            'supporter' => 'support',
+            'validator' => 'validation',
+            'acceptor' => 'acceptance',
+        ][auth()->user()->roleType->name] .
+        '.index';
+
+    return redirect()->route($route_name);
+});
 
 // Basic authentication
 Route::get('/login', [ AuthenticatedSessionController::class, 'create' ])->name('login');
 Route::post('/authenticate', [ AuthenticatedSessionController::class, 'store' ])->name('authenticate');
-Route::get('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
+Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->name('logout');
 
 Route::get('/error', fn() => 'Whoops an error occured');
 
-// ciptaan/kertas-kerja/
-
-// PTJ, Student,
+// Creator Routes
 Route::prefix('ciptaan/kertas-kerja')
     ->middleware(['auth', 'role:creator'])
     ->name('paperwork.creation.')
     ->group(function() {
-        Route::resource('', PaperworkCreatorController::class)
+        Route::resource('', PaperworkCreationController::class)
             ->only(['index', 'show', 'create', 'store', 'destroy']);
-});
+    });
 
-Route::put('/post/{id}', function ($id) {
-    //
-})->middleware('role:acceptor');
+// Supporter Routes
+Route::prefix('sokongan/kertas-kerja')
+    ->middleware(['auth', 'role:supporter'])
+    ->name('paperwork.support.')
+    ->group(function() {
+        Route::resource('', PaperworkSupportController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy']);
+    });
 
-Route::put('/post/{id}', function ($id) {
-    //
-})->middleware('role:creator');
+// Validator Routes
+Route::prefix('pengesahan/kertas-kerja')
+    ->middleware(['auth', 'role:validator'])
+    ->name('paperwork.validation.')
+    ->group(function() {
+        Route::resource('', PaperworkValidationController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy']);
+    });
 
-Route::put('/post/{id}', function ($id) {
-    //
-})->middleware('role:supporter');
-
-// TODO: Continue this pattern for other 'role types' as well.
-
-// TODO: Design routes and it's controller for the 'supporter' feature
+// Acceptor Routes
+Route::prefix('penerimaan/kertas-kerja')
+    ->middleware(['auth', 'role:acceptor'])
+    ->name('paperwork.acceptance.')
+    ->group(function() {
+        Route::resource('', PaperworkAcceptanceController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy']);
+    });

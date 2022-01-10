@@ -16,10 +16,9 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        if(! $request->user()->hasRole($role) ) {
-            return redirect('/error')->with('error', 'Role could not be identified, please contact administrator');
-        };
-
-        return $next($request);
+        if ( $request->user()->hasRole('admin') || $request->user()->hasRole($role)) {
+            return $next($request);
+        }
+        return redirect('/error')->with('error', 'Role could not be identified, please contact administrator');
     }
 }

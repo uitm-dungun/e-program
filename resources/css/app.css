@@ -17,6 +17,6 @@
     @apply uppercase font-bold text-xs text-gray-400;
 }
 
-.input-bordered {
-    @apply rounded-none;
+.card {
+    @apply border ;
 }
