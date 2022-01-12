@@ -92,3 +92,7 @@ Route::prefix('penerimaan/kertas-kerja')
         Route::resource('', PaperworkAcceptanceController::class)
             ->only(['index', 'show', 'create', 'store', 'destroy']);
     });
+
+Route::get('/posts', function() {
+    return view('posts');
+});

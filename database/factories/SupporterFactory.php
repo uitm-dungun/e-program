@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Supporter;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SupporterFactory extends Factory
@@ -22,7 +23,7 @@ class SupporterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => User::inRandomOrder()->first()->id
         ];
     }
 }

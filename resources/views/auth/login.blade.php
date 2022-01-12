@@ -1,5 +1,5 @@
 <x-layout class="flex flex-col items-center justify-center min-h-screen">
-    
+
     {{-- hero  --}}
     <div class="bg-base-200 px-20 py-16 rounded-3xl">
         @if($errors->any())

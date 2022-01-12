@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paperwork;
+use App\Models\PaperworkSupport;
+use App\Models\Supporter;
+use App\Models\User;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -50,9 +54,26 @@ class PaperworkCreationController extends Controller
 
         $paperwork->status = "Pending";
 
+        $paperwork->support()->create();
+
         $paperwork->save();
 
+        if (auth()->user()->roleType->name == 'ptj') {
+            $paperwork->support->supporters()->create([
+                'user_id' => User::ofType('ptj')->inRandomOrder()->first()->id
+            ]);
+        } else if (auth()->user()->roleType->name == 'student_hea') {
+        } else if (auth()->user()->roleType->name == 'student_hep') {
+        } else {
+            throw new Exception('Role\'s type is not found database, please contact admin to diagnose this role issue.');
+        }
+
+
         // Here setup the supporter for one's paperwork
-        $paperwork->supports;
+        $paperwork->supports()->create([
+
+        ]);
     }
+
+
 }

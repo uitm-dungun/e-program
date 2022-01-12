@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PaperworkSupport extends Model
 {
     use HasFactory;
+
+    public function supporters()
+    {
+        return $this->hasMany(Supporter::class);
+    }
 }

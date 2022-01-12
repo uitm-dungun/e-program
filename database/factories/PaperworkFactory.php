@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Paperwork;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -41,6 +42,7 @@ class PaperworkFactory extends Factory
             'officers' => "[]",
             'budgets' => "[]",
 
+            'creator_id' => User::ofType('creator')->inRandomOrder()->first()->id,
         ];
     }
 }

@@ -18,7 +18,7 @@ class CreatePaperworkSupportsTable extends Migration
         Schema::create('paperwork_supports', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Paperwork::class); // Which paperwork is this for
-            $table->boolean('is_complete'); // Everyone has already supported; cached value instead of a query
+            $table->boolean('is_complete')->default(false); // Everyone has already supported; cached value instead of a query
             $table->timestamps();
         });
     }
