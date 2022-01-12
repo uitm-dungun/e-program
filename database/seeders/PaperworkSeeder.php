@@ -24,7 +24,9 @@ class PaperworkSeeder extends Seeder
         // Only for pending
         Paperwork::factory()->for($statuses['pending'])
         ->has(PaperworkSupport::factory()
-            ->has(Supporter::factory()))
+            ->has(Supporter::factory())
+             /* PaperworkSupport */,
+             'support')
         ->create();
 
         // Pop the pending status to seed for other statuses
@@ -36,7 +38,9 @@ class PaperworkSeeder extends Seeder
             ->has(PaperworkSupport::factory()
                 ->has(Supporter::factory()->state([
                     'has_supported' => true
-                ])))
+                ])) /* PaperworkSupport */,
+                'support'
+            )
             ->create();
         }
     }

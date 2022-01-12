@@ -42,7 +42,7 @@ class PaperworkFactory extends Factory
             'officers' => "[]",
             'budgets' => "[]",
 
-            'creator_id' => User::ofType('creator')->inRandomOrder()->first()->id,
+            'creator_id' => User::ofRole('creator')->inRandomOrder()->first()->id,
         ];
     }
 }

@@ -13,4 +13,9 @@ class PaperworkSupport extends Model
     {
         return $this->hasMany(Supporter::class);
     }
+
+    public function paperwork()
+    {
+        return $this->belongsTo (Paperwork::class);
+    }
 }

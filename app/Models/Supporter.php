@@ -10,4 +10,9 @@ class Supporter extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function support()
+    {
+        return $this->belongsTo(PaperworkSupport::class);
+    }
 }
