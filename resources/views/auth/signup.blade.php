@@ -51,7 +51,7 @@
                         </label>
                         <select class="select select-bordered w-full max-w-xs">
                             <option disabled="disabled" selected="selected">Program</option>
-                            <option>Pra-Diplome</option>
+                            <option>Pra-Diploma</option>
                             <option>Diploma</option>
                             <option>Degree</option>
                         </select>
@@ -185,18 +185,6 @@
                             <span class="label-text">Re-Create Password</span>
                         </label>
                         <input name="name" type="text" class="input input-bordered">
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
-                <div class="flex flex-col">
-                    <div class="form-control py-4">
-                        <label class="label mb-2">
-                                <span class="label-text">Objektif</span>
-                        </label>
-                            <!-- textarea class="textarea h-24 textarea-bordered" placeholder="objektif program"></textarea -->
-                        <textarea class="textarea textarea-bordered mb-4" name="objective" class="max" id="coverLetterText" rows="8" background></textarea>
-                        <span class="text-gray-400 text-sm">* Objektif mesti kurang dari 500 patah perkataan</span>
                     </div>
                 </div>
             </div>

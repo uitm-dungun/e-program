@@ -57,6 +57,8 @@ Route::post('/logout', [ AuthenticatedSessionController::class, 'destroy' ])->na
 
 Route::get('/error', fn() => 'Whoops an error occured');
 
+Route::get('/signup', fn() => view('auth.signup'))->name('sup');
+
 // Creator Routes
 Route::prefix('ciptaan/kertas-kerja')
     ->middleware(['auth', 'role:creator'])

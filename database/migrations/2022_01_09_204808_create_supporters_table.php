@@ -19,6 +19,7 @@ class CreateSupportersTable extends Migration
             $table->id();
             $table->foreignIdFor(PaperworkSupport::class);
             $table->foreignIdFor(User::class);
+            $table->tinyInteger('level')->default(1);
             $table->boolean('has_supported')->default(false);
             $table->timestamps();
         });

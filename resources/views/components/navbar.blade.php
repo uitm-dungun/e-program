@@ -1,5 +1,5 @@
 <nav class="navbar border-b">
-    {{ Breadcrumbs::render(Route::currentRouteName()) }}
+    {{-- {{ Breadcrumbs::render(Route::currentRouteName()) }} --}}
     <div class="hidden px-2 mx-2 navbar-center lg:flex">
         <div class="flex items-stretch">
             <a class="btn btn-ghost btn-sm rounded-btn normal-case" href="/">

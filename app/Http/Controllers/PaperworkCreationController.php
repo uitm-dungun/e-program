@@ -29,6 +29,7 @@ class PaperworkCreationController extends Controller
 
     public function store(Request $request)
     {
+        // TODO Refactor using FormRequest
         $paperwork = new Paperwork();
 
         // Step 1
@@ -58,21 +59,39 @@ class PaperworkCreationController extends Controller
 
         $paperwork->save();
 
-        if (auth()->user()->roleType->name == 'ptj') {
-            $paperwork->support->supporters()->create([
-                'user_id' => User::ofType('ptj')->inRandomOrder()->first()->id
-            ]);
-        } else if (auth()->user()->roleType->name == 'student_hea') {
-        } else if (auth()->user()->roleType->name == 'student_hep') {
-        } else {
-            throw new Exception('Role\'s type is not found database, please contact admin to diagnose this role issue.');
+        switch ([auth()->user()->roleType->name, auth()->user()->roleType->type]) {
+
+            case ['creator', 'ptj']:
+                $paperwork->support->supporters()->createMany([
+                    ['user_id' => User::ofRole('supporter')->ofType('officer_ptj')->inRandomOrder()->first()->id]
+                ]);
+                break;
+
+            case ['creator', 'student_hea']:
+                //trhea last approved
+                $paperwork->support->supporters()->createMany([
+                    ['user_id' => User::ofRole('supporter')->ofType('penasihat')->inRandomOrder()->first()->id],
+                    ['user_id' => User::ofRole('supporter')->ofType('kpb')->inRandomOrder()->first()->id],
+                    ['user_id' => User::ofRole('supporter')->ofType('kupr')->inRandomOrder()->first()->id],
+                    ['user_id' => User::ofRole('supporter')->ofType('kpp')->inRandomOrder()->first()->id, 'level'=> 2]
+                ]);
+                break;
+
+            case ['creator', 'student_hep']:
+                //trhep last approved
+                $paperwork->support->supporters()->createMany([
+                    ['user_id' => User::ofRole('supporter')->ofType('penasihat')->inRandomOrder()->first()->id],
+                    ['user_id' => User::ofRole('supporter')->ofType('kpb')->inRandomOrder()->first()->id],
+                    ['user_id' => User::ofRole('supporter')->ofType('kupr')->inRandomOrder()->first()->id]
+                ]);
+                break;
+
+            default:
+                throw new Exception('Role\'s type is not found in database, please contact admin to diagnose this role issue.');
+                break;
         }
 
-
-        // Here setup the supporter for one's paperwork
-        $paperwork->supports()->create([
-
-        ]);
+        return redirect()->route('paperwork.creation.index');
     }
 
 
