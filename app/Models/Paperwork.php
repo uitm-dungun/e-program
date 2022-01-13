@@ -22,4 +22,20 @@ class Paperwork extends Model
     {
         return $this->hasOne(PaperworkSupport::class);
     }
+
+    public function supporters()
+    {
+        return $this->hasManyThrough(
+            Supporter::class,
+            PaperworkSupport::class,
+            'paperwork_id',
+            'paperwork_support_id',
+        );
+    }
+
+    // TODO To review a problematic scope
+    public function scopeSupporterIsUser()
+    {
+        return $this->supporters()->isAuth();
+    }
 }

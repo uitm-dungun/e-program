@@ -43,6 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function supporter()
+    {
+        return $this->hasOne(Supporter::class);
+    }
+
     public function hasRoleName($role_name)
     {
         return $this->roleType->name == $role_name;
