@@ -271,7 +271,9 @@
                                     <div class="font-bold">
                                         NAME
                                     <!--
-                                    USER CAN CHOOSE BETWEEN 3 OPTION WHICH IS => YA, TIDAK, TIDAK BERKENAAN
+                                    USER CAN CHOOSE BETWEEN 3 OPTION FOR PEMATUHAN WHICH IS => YA, TIDAK, TIDAK BERKENAAN
+                                    THEAD = PERKARA, PEMATUHAN=>RADIO/CHECKBOX;
+                                    USER CAN ADD ROW BELOW IF THEY WANT TO ADD ANY SOP GUIDELINE THAT'S NOT PROVIDED
                                     1 Penganjuran bukan di kawasan Perintah Kawalan Pergerakan Darurat (PKPD)
                                     2 Tiada tetamu berkategori Patient Under Investigation (PUI) / Patient Under Surveillance (PUS) hadir
                                     3 Penggunaan Borang Deklarasi Harian Saringan Risiko COVID-19 UiTM samada manual atau melalui aplikasi
