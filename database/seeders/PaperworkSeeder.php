@@ -13,11 +13,12 @@ class PaperworkSeeder extends Seeder
     public function run()
     {
         $statuses = [];
-        $statuses['pending']  = Status::create(['name' => 'Pending',      'className' => 'badge-ghost']);
-        $statuses['reviewed'] = Status::create(['name' => 'Reviewed',     'className' => 'badge-primary']);
-        $statuses['accepted'] = Status::create(['name' => 'Accepted',     'className' => 'badge-success']);
-        $statuses['toreview'] = Status::create(['name' => 'To Review',    'className' => 'badge-info']);
-        $statuses['rejected'] = Status::create(['name' => 'Rejected',     'className' => 'badge-error']);
+        $statuses['pending']    = Status::create(['name' => 'Pending',     'className' => 'badge-ghost']); // Created
+        $statuses['supported']  = Status::create(['name' => 'Supported',   'className' => 'badge-secondary']); // Supported by supporters
+        $statuses['reviewed']   = Status::create(['name' => 'Reviewed',    'className' => 'badge-primary']); // Reviewed by clerk
+        $statuses['accepted']   = Status::create(['name' => 'Accepted',    'className' => 'badge-success']); // Accepted by top level officer, end of program
+        $statuses['toreview']   = Status::create(['name' => 'To Review',   'className' => 'badge-info']); // Sent to review / make edits from top level officer
+        $statuses['rejected']   = Status::create(['name' => 'Rejected',    'className' => 'badge-error']); // Rejected from clerk, from supporters
 
         // Only for pending
         Paperwork::factory()->for($statuses['pending'])
@@ -32,7 +33,7 @@ class PaperworkSeeder extends Seeder
 
         // Other than pending; after all supporter supported the paperworks
         foreach ($statuses as $status) {
-            Paperwork::factory()->for($status)
+            Paperwork::factory(20)->for($status)
             ->has(PaperworkSupport::factory()
                 ->has(Supporter::factory()->state([
                     'user_id' => 4,

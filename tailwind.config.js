@@ -7,6 +7,7 @@ module.exports = {
   ],
   safelist: [
     'badge-primary',
+    'badge-secondary',
     'badge-success',
     'badge-info',
     'badge-error',

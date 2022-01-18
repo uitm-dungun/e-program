@@ -12,8 +12,12 @@ class PaperworkSupportController extends Controller
         $paperworks = Paperwork::whereRelation('support.supporters', 'user_id', auth()->user()->id)
             ->whereRelation('support.supporters', 'has_supported', true)
             ->get();
+        $paperworks_mode = 'support';
 
-        return view('paperwork.index', ['paperworks' => $paperworks]);
+        return view('paperwork.index', [
+            'paperworks' => $paperworks,
+            'paperworks_mode' => $paperworks_mode,
+        ]);
     }
 
     public function show($id)
