@@ -6,9 +6,7 @@ use App\Models\Paperwork;
 use App\Models\PaperworkSupport;
 use App\Models\Status;
 use App\Models\Supporter;
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use PhpParser\Node\Stmt\Foreach_;
 
 class PaperworkSeeder extends Seeder
 {
@@ -24,9 +22,9 @@ class PaperworkSeeder extends Seeder
         // Only for pending
         Paperwork::factory()->for($statuses['pending'])
         ->has(PaperworkSupport::factory()
-            ->has(Supporter::factory())
-             /* PaperworkSupport */,
-             'support')
+            ->has(Supporter::factory()->state([
+                'user_id' => 4,
+            ])), 'support')
         ->create();
 
         // Pop the pending status to seed for other statuses
@@ -37,7 +35,8 @@ class PaperworkSeeder extends Seeder
             Paperwork::factory()->for($status)
             ->has(PaperworkSupport::factory()
                 ->has(Supporter::factory()->state([
-                    'has_supported' => true
+                    'user_id' => 4,
+                    'has_supported' => true,
                 ])) /* PaperworkSupport */,
                 'support'
             )

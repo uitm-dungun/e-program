@@ -7,13 +7,18 @@ use Illuminate\Http\Request;
 
 class PaperworkSupportController extends Controller
 {
-    public function index ()
+    public function index()
     {
-        $paperworks = Paperwork::whereHas('support.supporters', function ($query) {
-            $query->where('user_id', auth()->user()->id);
-        })->get();
+        $paperworks = Paperwork::whereRelation('support.supporters', 'user_id', auth()->user()->id)
+            ->whereRelation('support.supporters', 'has_supported', true)
+            ->get();
 
-        return view('paperworks.supporter.index', ['paperworks' => $paperworks]);
+        return view('paperwork.index', ['paperworks' => $paperworks]);
+    }
+
+    public function show($id)
+    {
+        return view('paperwork.supporter.show', ['paperwork' => Paperwork::find($id)]);
     }
 
 }

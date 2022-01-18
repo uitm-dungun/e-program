@@ -5,6 +5,13 @@ module.exports = {
     './resources/**/*.js',
     './resources/**/*.vue',
   ],
+  safelist: [
+    'badge-primary',
+    'badge-success',
+    'badge-info',
+    'badge-error',
+    'badge-ghost',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},

@@ -1,7 +1,7 @@
-<x-layout class="flex flex-col items-center justify-center min-h-screen">
+<x-layout class="flex flex-col items-center justify-center min-h-screen" style="background: url({{ asset('images/scott-graham-OQMZwNd3ThU-unsplash.jpg') }}) center center / cover no-repeat">
 
     {{-- hero  --}}
-    <div class="bg-base-200 px-20 py-16 rounded-3xl">
+    <div class="glass px-20 py-16 rounded-3xl">
         @if($errors->any())
             <div class="alert alert-warning mb-10">
                 <div class="flex-1">
@@ -20,10 +20,10 @@
         <div class="flex-col justify-center hero-content lg:flex-row gap-20">
             <div class="text-center lg:text-left">
                 <h1 class="mb-5 text-5xl font-bold whitespace-nowrap">
-                    ePaperwork
+                    Log Masuk
                 </h1>
                 <p class="mb-5">
-                    Sila login untuk tuju ke destinasi yang seterusnya.
+                    Sila isi butiran anda untuk ke halaman seterusnya
                 </p>
             </div>
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -32,17 +32,17 @@
                     @csrf
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Email</span>
+                            <span class="label-text">E-Mel</span>
                         </label>
-                        <input type="text" placeholder="email" class="input input-bordered" name="email">
+                        <input type="text" placeholder="e-mel" class="input input-bordered" name="email">
                     </div>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Password</span>
+                            <span class="label-text">Kata Laluan</span>
                         </label>
-                        <input type="password" placeholder="password" class="input input-bordered" name="password">
+                        <input type="password" placeholder="kata laluan" class="input input-bordered" name="password">
                         <label class="label">
-                            <a href="#" class="label-text-alt">Forgot password?</a>
+                            <a href="#" class="label-text-alt">Lupa kata laluan?</a>
                         </label>
                     </div>
                     <div class="form-control mt-6">

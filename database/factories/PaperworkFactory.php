@@ -24,11 +24,11 @@ class PaperworkFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'abc',
+            'title' => "{$this->faker->catchPhrase} {$this->faker->catchPhrase} {$this->faker->catchPhrase} {$this->faker->catchPhrase}",
             'venue' => 'abc',
             'total_participants' => 2,
             'target_participants' => 2,
-            'objective' => 'abc',
+            'objective' => $this->faker->realText(),
 
             'begin_date' => new Carbon('2021-01-01'),
             'begin_time' => '12:00:00',
@@ -39,8 +39,28 @@ class PaperworkFactory extends Factory
             'budget_grant' => 'abc',
             'budget_notes' => 'abc',
 
-            'officers' => "[]",
-            'budgets' => "[]",
+            'officers' => [
+                $this->faker->name(),
+                $this->faker->name(),
+                $this->faker->name(),
+            ],
+            'budgets' => [
+                [
+                    'detail' => $this->faker->catchPhrase(),
+                    'price_per_unit' => $this->faker->numberBetween(1,200),
+                    'quantity' => $this->faker->numberBetween(1,200),
+                ],
+                [
+                    'detail' => $this->faker->catchPhrase(),
+                    'price_per_unit' => $this->faker->numberBetween(1,200),
+                    'quantity' => $this->faker->numberBetween(1,200),
+                ],
+                [
+                    'detail' => $this->faker->catchPhrase(),
+                    'price_per_unit' => $this->faker->numberBetween(1,200),
+                    'quantity' => $this->faker->numberBetween(1,200),
+                ],
+            ],
 
             'creator_id' => User::ofRole('creator')->inRandomOrder()->first()->id,
         ];

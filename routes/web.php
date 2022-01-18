@@ -60,41 +60,67 @@ Route::get('/error', fn() => 'Whoops an error occured');
 Route::get('/signup', fn() => view('auth.signup'))->name('sup');
 
 // Creator Routes
-Route::prefix('ciptaan/kertas-kerja')
+Route::prefix('ciptaan')
     ->middleware(['auth', 'role:creator'])
-    ->name('paperwork.creation.')
+    ->name('paperwork.')
     ->group(function() {
-        Route::resource('', PaperworkCreationController::class)
-            ->only(['index', 'show', 'create', 'store', 'destroy']);
+        Route::resource('kertas-kerja', PaperworkCreationController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy'])
+            ->names([
+                'index' => 'creation.index',
+                'show' => 'creation.show',
+                'create' => 'creation.create',
+                'store' => 'creation.store',
+                'destroy' => 'creation.destroy',
+            ]);
+
     });
 
 // Supporter Routes
-Route::prefix('sokongan/kertas-kerja')
+Route::prefix('sokongan')
     ->middleware(['auth', 'role:supporter'])
-    ->name('paperwork.support.')
+    ->name('paperwork.')
     ->group(function() {
-        Route::resource('', PaperworkSupportController::class)
-            ->only(['index', 'show', 'create', 'store', 'destroy']);
+        Route::resource('kertas-kerja', PaperworkSupportController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy'])
+            ->names([
+                'index' => 'support.index',
+                'show' => 'support.show',
+                'create' => 'support.create',
+                'store' => 'support.store',
+                'destroy' => 'support.destroy',
+            ]);
     });
 
+
 // Validator Routes
-Route::prefix('pengesahan/kertas-kerja')
+Route::prefix('pengesahan')
     ->middleware(['auth', 'role:validator'])
-    ->name('paperwork.validation.')
+    ->name('paperwork.')
     ->group(function() {
-        Route::resource('', PaperworkValidationController::class)
-            ->only(['index', 'show', 'create', 'store', 'destroy']);
+        Route::resource('kertas-kerja', PaperworkValidationController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy'])
+            ->names([
+                'index' => 'validation.index',
+                'show' => 'validation.show',
+                'create' => 'validation.create',
+                'store' => 'validation.store',
+                'destroy' => 'validation.destroy',
+            ]);
     });
 
 // Acceptor Routes
-Route::prefix('penerimaan/kertas-kerja')
+Route::prefix('penerimaan')
     ->middleware(['auth', 'role:acceptor'])
-    ->name('paperwork.acceptance.')
+    ->name('paperwork.')
     ->group(function() {
-        Route::resource('', PaperworkAcceptanceController::class)
-            ->only(['index', 'show', 'create', 'store', 'destroy']);
+        Route::resource('kertas-kerja', PaperworkAcceptanceController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy'])
+            ->names([
+                'index' => 'acceptance.index',
+                'show' => 'acceptance.show',
+                'create' => 'acceptance.create',
+                'store' => 'acceptance.store',
+                'destroy' => 'acceptance.destroy',
+            ]);
     });
-
-Route::get('/posts', function() {
-    return view('posts');
-});

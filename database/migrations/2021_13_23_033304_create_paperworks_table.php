@@ -32,44 +32,6 @@ class CreatePaperworksTable extends Migration
             $table->string('budget_grant');
             $table->string('budget_notes');
 
-            // TODO: Integrate a 'supporter' feature; create todo table as a relation to this
-
-            // Support Level: 1
-            // Supporter 1 = Joe, isSupported = false
-            // Supporter 2 = Joe, isSupported = false
-            // Supporter 3 = Joe, isSupported = false
-
-            // Support Level: 2
-            // Supporter 1 = Joe, isSupported = false
-            // Supporter 2 = Joe, isSupported = false
-            // Supporter 3 = Joe, isSupported = false
-
-            // supports
-
-            // $paperwork->supporter($level, $id)->name;
-
-            [
-                // Support Level 1
-                [
-                    // Supporter
-                    'support_id' => 1,
-                    'support_id' => 2,
-                    'support_id' => 3,
-                    // ['user_id' => 2, 'isSupported' => false],
-                    // ['user_id' => 4, 'isSupported' => false],
-                    // ['user_id' => 5, 'isSupported' => false],
-                ],
-                // Support Level 2
-                [
-                    'support_id' => 1,
-                    'support_id' => 2,
-                    'support_id' => 3,
-                    // ['user_id' => 2, 'isSupported' => false],
-                    // ['user_id' => 4, 'isSupported' => false],
-                    // ['user_id' => 5, 'isSupported' => false],
-                ]
-            ];
-
             $table->foreignIdFor(User::class, 'creator_id'); // Creator
             $table->foreignIdFor(Status::class); // Pending, Reviewed, Accepted, To Review, Rejected
 

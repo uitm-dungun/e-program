@@ -11,6 +11,7 @@ class Paperwork extends Model
 
     protected $casts = [
         'budgets' => 'array',
+        'officers' => 'array',
     ];
 
     public function status()
