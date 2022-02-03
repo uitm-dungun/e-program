@@ -21,12 +21,12 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required'],
         ]);
 
+        //no function
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect(RouteServiceProvider::HOME);
         }
-
 
         return back()->withErrors([
             'email' => 'Butiran anda tidak ada dalam rekod kami, sila cuba isi semula.'

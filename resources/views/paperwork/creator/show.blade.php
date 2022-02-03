@@ -263,9 +263,9 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Soalan</th>
-                                    <th>Ya(1)</th>
-                                    <th>Tidak(2)</th>
-                                    <th>Tidak Berkenaan(3)</th>
+                                    <th>Ya</th>
+                                    <th>Tidak</th>
+                                    <th>Tidak Berkenaan</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -450,9 +450,7 @@
                               </tr>
                               <tr>
                                 <td>Penganjur</td>
-                                <td><label for="penganjur"></label>
-                                <input type="number" id="penganjur" name="jum_penganjur"
-                                   min="1" max="30"></td>
+                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
                                 <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
                               </tr>
                                <tr>
