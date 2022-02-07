@@ -1,5 +1,4 @@
 <x-layout class>
-    {{--baiki smula cuma ltk format dia ja--}}
         <div class="flex gap-x-8">
             <div class="flex-1 flex flex-col gap-y-4">
                 <div class="border-2 border-blue-100 flex flex-col gap-4 p-5 rounded">
@@ -18,7 +17,8 @@
                         </label>
                         <input name="name" type="text" class="input input-bordered">
                     </div>
-                    <div class="form-control">
+
+                    {--<div class="form-control">
                         <label class="label">
                             <span class="label-text">Kampus</span>
                         </label>
@@ -162,6 +162,8 @@
                         </label>
                         <input name="name" type="text" class="input input-bordered">
                     </div>
+                    --}
+
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">E-mail</span>

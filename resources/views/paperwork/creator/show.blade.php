@@ -270,107 +270,107 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Penganjuran bukan di kawasan Perintah Kawalan Pergerakan Darurat (PKPD)</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPDP[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Tiada tetamu berkategori Patient Under Investigation (PUI) / Patient Under Surveillance (PUS) hadir                                                </td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Penggunaan Borang Deklarasi Harian Saringan Risiko COVID-19 UiTM samada manual atau melalui aplikasi</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Suhu badan akan diambil di pintu utama UiTMCT (Pos A) / di tempat penganjuran</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Penyediaan hand sanitizer dan rekod kehadiran di kaunter pendaftaran</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>Mewajibkan pemakaian pelitup muka semasa program</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
                                     <td>Pembersihan dan nyahkuman akan dijalankan sebelum / selepas program</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td>Memastikan tempat penganjuran mempunyai pengudaraan yang baik</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>9</td>
                                     <td>Menyediakan notis had bilangan di setiap ruang pada setiap masa</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Menyediakan penandaan penjarakan sosial dan laluan keluar/masuk</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>11</td>
                                     <td>Hidangan makanan bukan secara layan diri</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>12</td>
                                     <td>Kerap menyampaikan makluman peringatan keselamatan COVID-19 sepanjang program</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>13</td>
                                     <td>Tiada berkongsi barang / makanan</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>14</td>
                                     <td>Tetamu tiada menginap / berkongsi bilik kecuali mendapat kelulusan</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                                 <tr>
                                     <td>15</td>
                                     <td>Menggalakkan tetamu membersihkan diri dan menukar pakaian apabila kembali ke rumah</td>
-                                    <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
-                                    <td><input type="radio" id="N/A" name="choices" value="N/A"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="yes" name="PKPD[ch_y]" value="yes"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="no" name="PKPD[ch_t]" value="no"><label for="html"></label><br></td>
+                                    <td><input type="radio" id="N/A" name="PKPD[ch_tb]" value="N/A"><label for="html"></label><br></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -410,20 +410,20 @@
                               <tr>
                                 <td>1</td>
                                 <td>Papan Tanda</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                                 <td>2</td>
                                 <td>Pengawasan SOP Covid-19 Kemasukan</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                                 <td>3</td>
                                 <td>Pengawasan Lalu-Lintas Kenderaan</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n] value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                               <td colspan="4">Parking</td>
@@ -431,13 +431,13 @@
                               <tr>
                                 <td rowspan="2">4</td>
                                 <td>VIP</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                                 <td>Pengiring</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                               <td colspan="5">Pemantauan Keberadaan Pelajar</td>
@@ -445,13 +445,13 @@
                               <tr>
                                 <td rowspan="2">5</td>
                                 <td>Polis Bantuan</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                               <tr>
                                 <td>Penganjur</td>
-                                <td><input type="radio" id="yes" name="choices" value="yes"><label for="html"></label><br></td>
-                                <td><input type="radio" id="no" name="choices" value="no"><label for="html"></label><br></td>
+                                <td><input type="radio" id="yes" name="PB[ch_y]" value="yes"><label for="html"></label><br></td>
+                                <td><input type="radio" id="no" name="PB[ch_n]" value="no"><label for="html"></label><br></td>
                               </tr>
                                <tr>
                                 <td colspan="5">Catatan</td>
@@ -463,7 +463,7 @@
                                         <label class="label">
                                             <span class="label-text"></span>
                                         </label>
-                                        <textarea class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                        <textarea name="PB_notes" class="textarea h-24 textarea-bordered" placeholder="catatan"></textarea>
                                     </div>
                                 </td>
                               </tr>
