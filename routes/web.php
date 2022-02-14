@@ -46,7 +46,6 @@ Route::get('/', function() {
             'acceptor' => 'acceptance',
         ][auth()->user()->roleType->name] .
         '.index';
-
     return redirect()->route($route_name);
 });
 

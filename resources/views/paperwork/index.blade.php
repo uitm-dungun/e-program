@@ -1,5 +1,10 @@
 <x-layout class="px-8 pt-8 flex flex-col gap-4 min-h-screen bg-slate-100">
 
+    {{--<div class="result">
+        @foreach (App\Test::all() as $test )
+            <p>{{test->title}}</p>
+        @endforeach
+    </div>--}}
     <div class="flex flex-col space-y-3 hidden">
         <div class="flex-grow ">
         </div>

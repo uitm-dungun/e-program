@@ -6,6 +6,8 @@ use App\Models\Paperwork;
 use App\Models\PaperworkSupport;
 use App\Models\Status;
 use App\Models\Supporter;
+use App\Models\Risk;
+use App\Models\Safety;
 use Illuminate\Database\Seeder;
 
 class PaperworkSeeder extends Seeder

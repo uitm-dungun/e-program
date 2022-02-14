@@ -16,7 +16,12 @@ class PaperworkCreationController extends Controller
     public function index()
     {
         $paperworks = Paperwork::whereHas('status', function(Builder $query) { return $query->where('name', 'Pending'); })->get();
-        return view('paperwork.index', ['paperworks' => $paperworks]);
+        $paperworks_mode = 'creation';
+
+        return view('paperwork.index', [
+            'paperworks' => $paperworks,
+            'paperworks_mode' => $paperworks_mode,
+        ]);
     }
 
     // TODO: Debug 404 for this method
@@ -93,6 +98,4 @@ class PaperworkCreationController extends Controller
 
         return redirect()->route('paperwork.creation.index');
     }
-
-
 }

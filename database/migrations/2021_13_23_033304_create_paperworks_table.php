@@ -40,16 +40,6 @@ class CreatePaperworksTable extends Migration
 
             //$table->json('');
 
-            //PKPD SAFETY
-            $table->string('PKPD[ch_y]');
-            $table->string('PKPD[ch_t]');
-            $table->string('PKPD[ch_tb]');
-
-            //PB SECURITY
-            $table->string('PB_y');
-            $table->string('PB_n');
-            $table->string('PB_notes');
-
             $table->timestamps();
         });
     }

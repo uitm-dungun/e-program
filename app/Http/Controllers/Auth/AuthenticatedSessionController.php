@@ -27,8 +27,6 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended('kertas-kerja/fasa-1');
         }
 
-        return $credentials;
-
         return back()->withErrors([
             'email' => 'Butiran anda tidak ada dalam rekod kami, sila cuba isi semula.'
         ]);
