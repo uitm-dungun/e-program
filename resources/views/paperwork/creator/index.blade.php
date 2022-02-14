@@ -20,7 +20,7 @@
 
         </div>
 
-        {{-- Column 1 --}}
+        {{-- Column 1
         @foreach ($collection as $item)
             <div></div>
             <div></div>
@@ -29,7 +29,7 @@
             <div></div>
             <div></div>
             <div></div>
-        @endforeach
+        @endforeach--}}
 
         <div class="flex-grow rounded-lg shadow-lg px-8 py-5 flex flex-col justify-between">
 

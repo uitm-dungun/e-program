@@ -20,7 +20,6 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required'],
         ]);
 
-        /*ni function->doesn't work, check passed*/
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 

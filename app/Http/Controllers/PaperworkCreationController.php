@@ -18,7 +18,7 @@ class PaperworkCreationController extends Controller
         $paperworks = Paperwork::whereHas('status', function(Builder $query) { return $query->where('name', 'Pending'); })->get();
         $paperworks_mode = 'creation';
 
-        return view('paperwork.index', [
+        return view('paperwork.creator.index', [
             'paperworks' => $paperworks,
             'paperworks_mode' => $paperworks_mode,
         ]);
@@ -29,7 +29,7 @@ class PaperworkCreationController extends Controller
     {
         //return 'show page!';
         $paperworks = Paperwork::where('id', $id)->get();
-        return view('paperwork.show', ['paperworks' => $paperworks]);
+        return view('paperwork.creator.show', ['paperworks' => $paperworks]);
     }
 
     public function store(Request $request)
@@ -95,7 +95,6 @@ class PaperworkCreationController extends Controller
                 throw new Exception('Role\'s type is not found in database, please contact admin to diagnose this role issue.');
                 break;
         }
-
-        return redirect()->route('paperwork.creation.index');
+        return redirect()->route('paperwork.creator.index');
     }
 }
