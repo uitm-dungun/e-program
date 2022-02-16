@@ -66,13 +66,12 @@ Route::prefix('ciptaan')
         Route::resource('kertas-kerja', PaperworkCreationController::class)
             ->only(['index', 'show', 'create', 'store', 'destroy'])
             ->names([
-                'index' => 'creator.index',
-                'show' => 'creator.show',
-                'create' => 'creator.create',
-                'store' => 'creator.store',
-                'destroy' => 'creator.destroy',
+                'index' => 'creation.index',
+                'show' => 'creation.show',
+                'create' => 'creation.create',
+                'store' => 'creation.store',
+                'destroy' => 'creation.destroy',
             ]);
-
     });
 
 // Supporter Routes

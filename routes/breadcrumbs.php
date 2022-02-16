@@ -9,6 +9,10 @@ Breadcrumbs::for('paperwork.creation.index', function(BreadcrumbTrail $trail) {
     $trail->push('E-Paperwork', route('paperwork.creation.index'));
 });
 
+Breadcrumbs::for('paperwork.creation.show', function ($trail) {
+    $trail->push('Title Here', route('paperwork.creation.show'));
+});
+
 Breadcrumbs::for('paperwork.validation.index', function ($trail) {
     $trail->push('E-Paperwork', route('paperwork.validation.index'));
 });

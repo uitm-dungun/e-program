@@ -95,6 +95,6 @@ class PaperworkCreationController extends Controller
                 throw new Exception('Role\'s type is not found in database, please contact admin to diagnose this role issue.');
                 break;
         }
-        return redirect()->route('paperwork.creator.index');
+        return redirect()->route('paperwork.creation.index');
     }
 }
