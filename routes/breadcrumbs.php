@@ -8,8 +8,8 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 Breadcrumbs::for('paperwork.creation.index', function(BreadcrumbTrail $trail) {
     $trail->push('E-Paperwork', route('paperwork.creation.index'));
 });
-// Login > CreationIndex > CreationShow
-Breadcrumbs::for('paperwork.creation.show', function (g$trail) {
+// Login > CreationIndex > CreationShow[permohonan]
+Breadcrumbs::for('paperwork.creation.show', function ($trail) {
     $trail->parent('paperwork.creation.index');
     $trail->push('E-Paperwork', route('paperwork.creation.show'));
 });
@@ -39,6 +39,15 @@ Breadcrumbs::for('paperwork.support.show', function ($trail) {
     $trail->push('Sokongan Kertas Kerja', route('paperwork.support.show', '2'));
 });
 
+// Login > AcceptorIndex
+Breadcrumbs::for('paperwork.acceptance.index', function(BreadcrumbTrail $trail) {
+    $trail->push('E-Paperwork', route('paperwork.acceptance.index'));
+});
+// Login > AcceptorIndex > AcceptorShow
+Breadcrumbs::for('paperwork.acceptance.show', function ($trail) {
+    $trail->parent('paperwork.acceptance.index');
+    $trail->push('E-Paperwork', route('paperwork.acceptance.show'));
+});
 
 
 // // Create
