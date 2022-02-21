@@ -23,13 +23,24 @@ class AuthenticatedSessionController extends Controller
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('kertas-kerja/fasa-1');
+            return redirect()->intended('kertas-kerja');
         }
 
         return back()->withErrors([
             'email' => 'Butiran anda tidak ada dalam rekod kami, sila cuba isi semula.'
         ]);
     }
+
+    /*public function store(Request $request)
+    {
+        if (!Auth::attempt(request(['email', 'password']))) {
+            return back()->withErrors([
+                'message' => 'Please check your credentials and try again.'
+            ]);
+        }
+
+        return redirect()->intended('/kertas-kerja');
+    }*/
 
     public function destroy(Request $request) {
         Auth::logout();

@@ -74,23 +74,6 @@ Route::prefix('ciptaan')
             ]);
     });
 
-// Supporter Routes
-Route::prefix('sokongan')
-    ->middleware(['auth', 'role:supporter'])
-    ->name('paperwork.')
-    ->group(function() {
-        Route::resource('kertas-kerja', PaperworkSupportController::class)
-            ->only(['index', 'show', 'create', 'store', 'destroy'])
-            ->names([
-                'index' => 'support.index',
-                'show' => 'support.show',
-                'create' => 'support.create',
-                'store' => 'support.store',
-                'destroy' => 'support.destroy',
-            ]);
-    });
-
-
 // Validator Routes
 Route::prefix('pengesahan')
     ->middleware(['auth', 'role:validator'])
@@ -104,6 +87,22 @@ Route::prefix('pengesahan')
                 'create' => 'validation.create',
                 'store' => 'validation.store',
                 'destroy' => 'validation.destroy',
+            ]);
+    });
+
+// Supporter Routes
+Route::prefix('sokongan')
+    ->middleware(['auth', 'role:supporter'])
+    ->name('paperwork.')
+    ->group(function() {
+        Route::resource('kertas-kerja', PaperworkSupportController::class)
+            ->only(['index', 'show', 'create', 'store', 'destroy'])
+            ->names([
+                'index' => 'support.index',
+                'show' => 'support.show',
+                'create' => 'support.create',
+                'store' => 'support.store',
+                'destroy' => 'support.destroy',
             ]);
     });
 

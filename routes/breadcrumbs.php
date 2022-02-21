@@ -11,13 +11,13 @@ Breadcrumbs::for('paperwork.creation.index', function(BreadcrumbTrail $trail) {
 // Login > CreationIndex > CreationShow[permohonan]
 Breadcrumbs::for('paperwork.creation.show', function ($trail) {
     $trail->parent('paperwork.creation.index');
-    $trail->push('E-Paperwork', route('paperwork.creation.show'));
+    $trail->push('ciptaan', route('paperwork.creation.show'));
 });
 // Login > CreationIndex > CreationCreate[permohonan]
 
 // Login > ValidationIndex
-Breadcrumbs::for('paperwork.validation.index', function ($trail) {
-    $trail->push('E-Paperwork', route('paperwork.validation.index'));
+Breadcrumbs::for('paperwork.validation.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Pengesahan', route('paperwork.validation.index'));
 });
 
 // Login > ValidationIndex > ValidationShow
@@ -26,12 +26,11 @@ Breadcrumbs::for('paperwork.validation.show', function ($trail) {
     $trail->push('Pengesahan', route('paperwork.validation.show', 1));
 });
 
-
 // Login > ValidationIndex > ValidationCreate [Pengesahan KK]
 
 // Login > SupportIndex
-Breadcrumbs::for('paperwork.support.index', function ($trail) {
-    $trail->push('E-Paperwork', route('paperwork.support.index'));
+Breadcrumbs::for('paperwork.support.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Sokongan Kertas Kerja', route('paperwork.support.index'));
 });
 // Login > SupportIndex > SupportShow [P2engesahan KK]
 Breadcrumbs::for('paperwork.support.show', function ($trail) {
@@ -41,12 +40,12 @@ Breadcrumbs::for('paperwork.support.show', function ($trail) {
 
 // Login > AcceptorIndex
 Breadcrumbs::for('paperwork.acceptance.index', function(BreadcrumbTrail $trail) {
-    $trail->push('E-Paperwork', route('paperwork.acceptance.index'));
+    $trail->push('Penerimaan', route('paperwork.acceptance.index'));
 });
 // Login > AcceptorIndex > AcceptorShow
 Breadcrumbs::for('paperwork.acceptance.show', function ($trail) {
     $trail->parent('paperwork.acceptance.index');
-    $trail->push('E-Paperwork', route('paperwork.acceptance.show'));
+    $trail->push('Penerimaan', route('paperwork.acceptance.show'));
 });
 
 

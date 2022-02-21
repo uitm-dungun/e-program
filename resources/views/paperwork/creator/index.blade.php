@@ -3,7 +3,7 @@
 
         <div class="flex flex-col space-y-3">
             <div class="flex-grow ">
-            <a href="/kertas-kerja/fasa-1/permohonan" class="btn-block btn btn-lg btn-primary"><span
+            <a href="/kertas-kerja/permohonan" class="btn-block btn btn-lg btn-primary"><span
                     class="mr-3">Mohon</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
